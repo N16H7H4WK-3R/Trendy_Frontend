@@ -1,53 +1,32 @@
-import React from 'react'
+import React from 'react';
+import Card from 'react-bootstrap/Card';
+import Col from 'react-bootstrap/Col';
+import Row from 'react-bootstrap/Row';
 
+function GridExample() {
+    const rowStyle = {
+        margin: '10px 10px',
+    };
 
-
-const ShopContent = () => {
     return (
         <>
-            <div className="container my-5">
-                <div className="row">
-                    <div className="col-md-4 my-3">
-                        <div className="card" style={{width: '18rem'}}>
-                            <img src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fwonderfulengineering.com%2Fwp-content%2Fuploads%2F2014%2F01%2Fbeautiful-wallpaper-29.jpg&f=1&nofb=1&ipt=ce7e580bbd6143468b5fc746734de31495e39a7740929e63592ec036e4ff5a68&ipo=images" className="card-img-top" alt="..."/>
-                                <div className="card-body">
-                                    <h5 className="card-title">Card title</h5>
-                                    <a href="/" className="btn btn-primary">Go somewhere</a>
-                                </div>
-                        </div>
-                    </div>
-                    <div className="col-md-4 my-3">
-                        <div className="card" style={{width: '18rem'}}>
-                            <img src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fwonderfulengineering.com%2Fwp-content%2Fuploads%2F2014%2F01%2Fbeautiful-wallpaper-29.jpg&f=1&nofb=1&ipt=ce7e580bbd6143468b5fc746734de31495e39a7740929e63592ec036e4ff5a68&ipo=images" className="card-img-top" alt="..."/>
-                                <div className="card-body">
-                                    <h5 className="card-title">Card title</h5>
-                                    <a href="/" className="btn btn-primary">Go somewhere</a>
-                                </div>
-                        </div>
-                    </div>
-                    <div className="col-md-4 my-3">
-                        <div className="card" style={{width: '18rem'}}>
-                            <img src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fwonderfulengineering.com%2Fwp-content%2Fuploads%2F2014%2F01%2Fbeautiful-wallpaper-29.jpg&f=1&nofb=1&ipt=ce7e580bbd6143468b5fc746734de31495e39a7740929e63592ec036e4ff5a68&ipo=images" className="card-img-top" alt="..."/>
-                                <div className="card-body">
-                                    <h5 className="card-title">Card title</h5>
-                                    <a href="/" className="btn btn-primary">Go somewhere</a>
-                                </div>
-                        </div>
-                    </div>
-                    <div className="col-md-4 my-3">
-                        <div className="card" style={{width: '18rem'}}>
-                            <img src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fwonderfulengineering.com%2Fwp-content%2Fuploads%2F2014%2F01%2Fbeautiful-wallpaper-29.jpg&f=1&nofb=1&ipt=ce7e580bbd6143468b5fc746734de31495e39a7740929e63592ec036e4ff5a68&ipo=images" className="card-img-top" alt="..."/>
-                                <div className="card-body">
-                                    <h5 className="card-title">Card title</h5>
-                                    <a href="/" className="btn btn-primary">Go somewhere</a>
-                                </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <Row xs={1} md={4} className="g-4" style={rowStyle}>
+                {Array.from({ length: 8 }).map((_, idx) => (
+                    <Col key={idx}>
+                        <Card>
+                            <Card.Img variant="top" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.bwallpaperhd.com%2Fwp-content%2Fuploads%2F2021%2F01%2FNashPoint.jpg&f=1&nofb=1&ipt=185ed3efaf4ef310136de0581a0a39bd86679f1be2f474651920772e039ef65a&ipo=images" />
+                            <Card.Body>
+                                <Card.Title>Card title</Card.Title>
+                                <Card.Text>
+                                    This is a longer card with supporting text below as a natural
+                                </Card.Text>
+                            </Card.Body>
+                        </Card>
+                    </Col>
+                ))}
+            </Row>
         </>
-    )
-
+    );
 }
 
-export default ShopContent
+export default GridExample;
