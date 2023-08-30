@@ -7,10 +7,10 @@ import Footer from './components/footer'
 function App() {
   return (
     <>
-    <NavBar/>
-    <Carousel/>
-    <ShopContent/>
-    <Footer/>
+      <NavBar />
+      <Carousel />
+      <ShopContent />
+      <Footer />
     </>
   );
 }
