@@ -1,5 +1,5 @@
 import Carousel from 'react-bootstrap/Carousel';
-import Spinner from './spinner'
+import Spinner from './spinner';
 
 function IndividualIntervalsExample() {
     return (
