@@ -1,20 +1,20 @@
 import './App.css';
-import Cart from './components/cart';
+// import Cart from './components/cart';
 // import Login from './components/login';
-// import NavBar from './components/navbar';
-// import Carousel from './components/carousel';
-// import ShopContent from './components/shop';
-// import Footer from './components/footer'
+import NavBar from './components/navbar';
+import Carousel from './components/carousel';
+import ShopContent from './components/shop';
+import Footer from './components/footer'
 
 function App() {
   return (
     <>
-      {/* <NavBar />
+      <NavBar />
       <Carousel />
       <ShopContent />
-      <Footer /> */}
-      {/* <Login/> */}
-      <Cart />
+      <Footer />
+      {/* <Login/>
+      <Cart /> */}
     </>
   );
 }
