@@ -1,209 +1,66 @@
-import {
-    MDBBtn,
-    MDBCard,
-    MDBCardBody,
-    MDBCardHeader,
-    MDBCardImage,
-    MDBCol,
-    MDBContainer,
-    MDBIcon,
-    MDBInput,
-    MDBListGroup,
-    MDBListGroupItem,
-    MDBRipple,
-    MDBRow,
-    MDBTooltip,
-    MDBTypography,
-} from "mdb-react-ui-kit";
 import React from "react";
 
 const Cart = () => {
     return (
-        <section className="h-100 gradient-custom">
-            <MDBContainer className="py-5 h-100">
-                <MDBRow className="justify-content-center my-4">
-                    <MDBCol md="8">
-                        <MDBCard className="mb-4">
-                            <MDBCardHeader className="py-3">
-                                <MDBTypography tag="h5" className="mb-0">
-                                    Cart - 2 items
-                                </MDBTypography>
-                            </MDBCardHeader>
-                            <MDBCardBody>
-                                <MDBRow>
-                                    <MDBCol lg="3" md="12" className="mb-4 mb-lg-0">
-                                        <MDBRipple rippleTag="div" rippleColor="light"
-                                            className="bg-image rounded hover-zoom hover-overlay">
-                                            <img
-                                                src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Vertical/12a.webp"
-                                                className="wx-100" />
-                                            <a href="#!">
-                                                <div className="mask" style={{ backgroundColor: "rgba(251, 251, 251, 0.2)", }}>
-                                                </div>
-                                            </a>
-                                        </MDBRipple>
-                                    </MDBCol>
+        <div className="master-container">
+            <div className="card cart">
+                <label className="title">Your cart</label>
+                <div className="products">
+                    <div className="product">
+                        <svg fill="none" viewBox="0 0 60 60" height="60" width="60" xmlns="http://www.w3.org/2000/svg">
+                            <rect fill="#FFF6EE" rx="8.25" height="60" width="60"></rect>
+                            <path strokeLinejoin="round" strokeLinecap="round" strokeWidth="2.25" stroke="#FF8413" fill="#FFB672" d="M34.2812 18H25.7189C21.9755 18 18.7931 20.5252 17.6294 24.0434C17.2463 25.2017 17.0547 25.7808 17.536 26.3904C18.0172 27 18.8007 27 20.3675 27H39.6325C41.1993 27 41.9827 27 42.4639 26.3904C42.9453 25.7808 42.7538 25.2017 42.3707 24.0434C41.207 20.5252 38.0246 18 34.2812 18Z"></path>
+                            <path fill="#FFB672" d="M18 36H17.25C16.0074 36 15 34.9926 15 33.75C15 32.5074 16.0074 31.5 17.25 31.5H29.0916C29.6839 31.5 30.263 31.6754 30.7557 32.0039L33.668 33.9453C34.1718 34.2812 34.8282 34.2812 35.332 33.9453L38.2443 32.0039C38.7371 31.6754 39.3161 31.5 39.9084 31.5H42.75C43.9926 31.5 45 32.5074 45 33.75C45 34.9926 43.9926 36 42.75 36H42M18 36L18.6479 38.5914C19.1487 40.5947 20.9486 42 23.0135 42H36.9865C39.0514 42 40.8513 40.5947 41.3521 38.5914L42 36M18 36H28.5ZM42 36H39.75Z"></path>
+                            <path strokeLinejoin="round" strokeLinecap="round" strokeWidth="3" stroke="#FF8413" d="M34.512 22.5H34.4982"></path>
+                            <path strokeLinejoin="round" strokeLinecap="round" strokeWidth="2.25" stroke="#FF8413" d="M27.75 21.75L26.25 23.25"></path>
+                        </svg>
+                        <div>
+                            <span>Product Title</span>
+                            <p>Product Description</p>
+                            <p>Extras*</p>
+                        </div>
+                        <div className="quantity">
+                            <button>
+                                <svg fill="none" viewBox="0 0 24 24" height="14" width="14" xmlns="http://www.w3.org/2000/svg">
+                                    <path strokeLinejoin="round" strokeLinecap="round" strokeWidth="2.5" stroke="#47484b" d="M20 12L4 12"></path>
+                                </svg>
+                            </button>
+                            <label>2</label>
+                            <button>
+                                <svg fill="none" viewBox="0 0 24 24" height="14" width="14" xmlns="http://www.w3.org/2000/svg">
+                                    <path strokeLinejoin="round" strokeLinecap="round" strokeWidth="2.5" stroke="#47484b" d="M12 4V20M20 12H4"></path>
+                                </svg>
+                            </button>
+                        </div>
+                        <label className="price small">$23.99</label>
+                    </div>
+                </div>
+            </div>
 
-                                    <MDBCol lg="5" md="6" className=" mb-4 mb-lg-0">
-                                        <p>
-                                            <strong>Blue denim shirt</strong>
-                                        </p>
-                                        <p>Color: blue</p>
-                                        <p>Size: M</p>
+            <div className="card coupons">
+                <label className="title">Apply coupons</label>
+                <form className="form">
+                    <input type="text" placeholder="Apply your coupons here" className="input_field"/>
+                        <button>Apply</button>
+                </form>
+            </div>
 
-                                        <MDBTooltip wrapperProps={{ size: "sm" }} wrapperClass="me-1 mb-2"
-                                            title="Remove item">
-                                            <MDBIcon fas icon="trash" />
-                                        </MDBTooltip>
-
-                                        <MDBTooltip wrapperProps={{ size: "sm", color: "danger" }} wrapperClass="me-1 mb-2"
-                                            title="Move to the wish list">
-                                            <MDBIcon fas icon="heart" />
-                                        </MDBTooltip>
-                                    </MDBCol>
-                                    <MDBCol lg="4" md="6" className="mb-4 mb-lg-0">
-                                        <div className="d-flex mb-4" style={{ maxWidth: "300px" }}>
-                                            <MDBBtn className="px-3 me-2">
-                                                <MDBIcon fas icon="minus" />
-                                            </MDBBtn>
-
-                                            <MDBInput defaultValue={1} min={0} type="number" label="Quantity" />
-
-                                            <MDBBtn className="px-3 ms-2">
-                                                <MDBIcon fas icon="plus" />
-                                            </MDBBtn>
-                                        </div>
-
-                                        <p className="text-start text-md-center">
-                                            <strong>$17.99</strong>
-                                        </p>
-                                    </MDBCol>
-                                </MDBRow>
-
-                                <hr className="my-4" />
-
-                                <MDBRow>
-                                    <MDBCol lg="3" md="12" className="mb-4 mb-lg-0">
-                                        <MDBRipple rippleTag="div" rippleColor="light"
-                                            className="bg-image rounded hover-zoom hover-overlay">
-                                            <img
-                                                src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Vertical/13a.webp"
-                                                className="wx-100" />
-                                            <a href="#!">
-                                                <div className="mask" style={{ backgroundColor: "rgba(251, 251, 251, 0.2)", }}>
-                                                </div>
-                                            </a>
-                                        </MDBRipple>
-                                    </MDBCol>
-
-                                    <MDBCol lg="5" md="6" className=" mb-4 mb-lg-0">
-                                        <p>
-                                            <strong>Red hoodie</strong>
-                                        </p>
-                                        <p>Color: red</p>
-                                        <p>Size: M</p>
-
-                                        <MDBTooltip wrapperProps={{ size: "sm" }} wrapperClass="me-1 mb-2"
-                                            title="Remove item">
-                                            <MDBIcon fas icon="trash" />
-                                        </MDBTooltip>
-
-                                        <MDBTooltip wrapperProps={{ size: "sm", color: "danger" }} wrapperClass="me-1 mb-2"
-                                            title="Move to the wish list">
-                                            <MDBIcon fas icon="heart" />
-                                        </MDBTooltip>
-                                    </MDBCol>
-                                    <MDBCol lg="4" md="6" className="mb-4 mb-lg-0">
-                                        <div className="d-flex mb-4" style={{ maxWidth: "300px" }}>
-                                            <MDBBtn className="px-3 me-2">
-                                                <MDBIcon fas icon="minus" />
-                                            </MDBBtn>
-
-                                            <MDBInput defaultValue={1} min={0} type="number" label="Quantity" />
-
-                                            <MDBBtn className="px-3 ms-2">
-                                                <MDBIcon fas icon="plus" />
-                                            </MDBBtn>
-                                        </div>
-
-                                        <p className="text-start text-md-center">
-                                            <strong>$17.99</strong>
-                                        </p>
-                                    </MDBCol>
-                                </MDBRow>
-                            </MDBCardBody>
-                        </MDBCard>
-
-                        <MDBCard className="mb-4">
-                            <MDBCardBody>
-                                <p>
-                                    <strong>Expected shipping delivery</strong>
-                                </p>
-                                <p className="mb-0">12.10.2020 - 14.10.2020</p>
-                            </MDBCardBody>
-                        </MDBCard>
-
-                        <MDBCard className="mb-4 mb-lg-0">
-                            <MDBCardBody>
-                                <p>
-                                    <strong>We accept</strong>
-                                </p>
-                                <MDBCardImage className="me-2" width="45px"
-                                    src="https://mdbcdn.b-cdn.net/wp-content/plugins/woocommerce-gateway-stripe/assets/images/visa.svg"
-                                    alt="Visa" />
-                                <MDBCardImage className="me-2" width="45px"
-                                    src="https://mdbcdn.b-cdn.net/wp-content/plugins/woocommerce-gateway-stripe/assets/images/amex.svg"
-                                    alt="American Express" />
-                                <MDBCardImage className="me-2" width="45px"
-                                    src="https://mdbcdn.b-cdn.net/wp-content/plugins/woocommerce-gateway-stripe/assets/images/mastercard.svg"
-                                    alt="Mastercard" />
-                                <MDBCardImage className="me-2" width="45px"
-                                    src="https://mdbcdn.b-cdn.net/wp-content/plugins/woocommerce/includes/gateways/paypal/assets/images/paypal.png"
-                                    alt="PayPal acceptance mark" />
-                            </MDBCardBody>
-                        </MDBCard>
-                    </MDBCol>
-                    <MDBCol md="4">
-                        <MDBCard className="mb-4">
-                            <MDBCardHeader>
-                                <MDBTypography tag="h5" className="mb-0">
-                                    Summary
-                                </MDBTypography>
-                            </MDBCardHeader>
-                            <MDBCardBody>
-                                <MDBListGroup flush>
-                                    <MDBListGroupItem
-                                        className="d-flex justify-content-between align-items-center border-0 px-0 pb-0">
-                                        Products
-                                        <span>$53.98</span>
-                                    </MDBListGroupItem>
-                                    <MDBListGroupItem className="d-flex justify-content-between align-items-center px-0">
-                                        Shipping
-                                        <span>Gratis</span>
-                                    </MDBListGroupItem>
-                                    <MDBListGroupItem
-                                        className="d-flex justify-content-between align-items-center border-0 px-0 mb-3">
-                                        <div>
-                                            <strong>Total amount</strong>
-                                            <strong>
-                                                <p className="mb-0">(including VAT)</p>
-                                            </strong>
-                                        </div>
-                                        <span>
-                                            <strong>$53.98</strong>
-                                        </span>
-                                    </MDBListGroupItem>
-                                </MDBListGroup>
-
-                                <MDBBtn block size="lg">
-                                    Go to checkout
-                                </MDBBtn>
-                            </MDBCardBody>
-                        </MDBCard>
-                    </MDBCol>
-                </MDBRow>
-            </MDBContainer>
-        </section>
+            <div className="card checkout">
+                <label className="title">Checkout</label>
+                <div className="details">
+                    <span>Your cart subtotal:</span>
+                    <span>47.99$</span>
+                    <span>Discount through applied coupons:</span>
+                    <span>3.99$</span>
+                    <span>Shipping fees:</span>
+                    <span>4.99$</span>
+                </div>
+                <div className="checkout--footer">
+                    <label className="price"><sup>$</sup>57.99</label>
+                    <button className="checkout-btn">Checkout</button>
+                </div>
+            </div>
+        </div>
     );
 }
 
