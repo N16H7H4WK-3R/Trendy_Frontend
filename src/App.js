@@ -1,5 +1,5 @@
 import './App.css';
-import YourComponent from './components/shopDetails';
+import ShopDetails from './components/productDetails';
 // import NavBar from './components/navbar';
 // import Carousel from './components/carousel';
 // import ShopContent from './components/shop';
@@ -16,7 +16,7 @@ function App() {
       <Footer /> */}
       {/* <Login />
       <Cart /> */}
-      <YourComponent/>
+      <ShopDetails/>
     </>
   );
 }
