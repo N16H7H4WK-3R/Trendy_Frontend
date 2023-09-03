@@ -39,7 +39,7 @@ const ShopDetails = () => {
                 <div className={styles.product}>
                     <p style={{ color: 'black' }}>Women's Running Shoe</p>
                     <h1 style={{ color: 'black' }}>Nike Epic React Flyknit</h1>
-                    <h2 style={{ color: 'black' }}>$150</h2>
+                    <h2 style={{ color: 'black'}}>$150</h2>
                     <p className={styles.desc}>The Nike Epic React Flyknit foam cushioning is responsive yet lightweight, durable yet soft. This creates a sensation that not only enhances the feeling of moving forward but makes running feel fun, too.</p>
                     <div className={styles.buttons}>
                         <button className={styles.add}>Add to Cart</button>

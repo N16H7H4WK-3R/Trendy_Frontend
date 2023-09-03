@@ -5,7 +5,7 @@
     --light: #E0C9CB;
     --tan: #C3A1A0;
     --pink: #D9AAB7;
-    --rose: #BA7E7E;
+    --rose: #0e0808;
     --dark: #4E4E4E;
 }
 
@@ -76,7 +76,7 @@ body {
     text-transform: none;
     letter-spacing: 0;
     color: var(--dark);
-    font-size: 0.7em;
+    font-size: 0.8em;
     line-height: 1.6em;
     text-align: justify;
 }
