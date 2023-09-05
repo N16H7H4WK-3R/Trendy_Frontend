@@ -1,11 +1,9 @@
 import Carousel from 'react-bootstrap/Carousel';
-import Spinner from './spinner';
 import Grid from './shop';
 
 function IndividualIntervalsExample() {
     return (
         <>
-            <Spinner />
             <Carousel>
                 <Carousel.Item interval={500}>
                     <img

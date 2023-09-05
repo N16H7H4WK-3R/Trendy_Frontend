@@ -1,4 +1,5 @@
 import './App.css';
+import React from 'react';
 import Carousel from './components/carousel';
 import Footer from './components/footer';
 import MainNavbar from './components/navbar';
