@@ -1,22 +1,21 @@
 import './App.css';
 import Carousel from './components/carousel';
-import ShopContent from './components/shop';
 import Footer from './components/footer';
 import MainNavbar from './components/navbar';
-// import ShopDetails from './components/productDetails';
-import Cart from './components/cart';
-// import Login from './components/login';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import ShopDetails from './components/productDetails';
 
 function App() {
   return (
     <>
-      <MainNavbar/>
-      <Carousel />
-      <ShopContent />
-      <Footer />
-      {/* <Login />
-      <Cart /> */}
-      {/* <ShopDetails/> */}
+      <Router>
+        <MainNavbar />
+        <Routes>
+          <Route path="/" element={<Carousel />} />
+          <Route path="/cart/*" element={<ShopDetails />} />
+        </Routes>
+        <Footer />
+      </Router>
     </>
   );
 }

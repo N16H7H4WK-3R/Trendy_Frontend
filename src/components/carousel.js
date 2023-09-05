@@ -1,5 +1,6 @@
 import Carousel from 'react-bootstrap/Carousel';
 import Spinner from './spinner';
+import Grid from './shop';
 
 function IndividualIntervalsExample() {
     return (
@@ -42,6 +43,7 @@ function IndividualIntervalsExample() {
                     </Carousel.Caption>
                 </Carousel.Item>
             </Carousel>
+            <Grid />
         </>
     );
 }

@@ -3,7 +3,6 @@ import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import Cart from './cart';
 
 function Grid() {
     const [isComponentLoaded, setIsComponentLoaded] = useState(false);
@@ -18,16 +17,23 @@ function Grid() {
             draggable: true,
             theme: 'dark',
         });
+    };
+
+    const productDetail = () => {
         setIsComponentLoaded(true);
     };
 
     return (
         <>
+            {isComponentLoaded}
+            <ToastContainer />
             <Row xs={2} md={6} className="g-4" style={{ margin: '0px' }}>
                 {Array.from({ length: 30 }).map((_, idx) => (
                     <Col key={idx}>
-                        <div className="Scard">
-                            <div className="Scard-img"></div>
+                        <div className="Scard" onClick={productDetail}>
+                            <a href="/cart">
+                                <div className="Scard-img"></div>
+                            </a>
                             <div className="Scard-info">
                                 <p className="text-title">Product title</p>
                                 <p className="text-body">Product Description</p>
@@ -46,9 +52,6 @@ function Grid() {
                     </Col>
                 ))}
             </Row>
-
-            {isComponentLoaded && <Cart />} {/* Render Cart component when isComponentLoaded is true */}
-            <ToastContainer />
         </>
     );
 }
