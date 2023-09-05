@@ -40,8 +40,9 @@ const Grid = (props) => {
                 dataLength={itemsToLoad}
                 next={loadMoreItems}
                 hasMore={itemsToLoad < maxItems}
+                style={{overflow: 'hidden'}}
             >
-                <Row xs={2} md={6} className="gy-2 gx-2" style={{ margin: '0', overflow: 'hidden' }}>
+                <Row xs={2} md={6} className="g-2 gy-4 my-2 fixRows" style={{ marginLeft: '20px', overflow: 'hidden'}}>
                     {Array.from({ length: itemsToLoad }).map((_, idx) => (
                         <Col key={idx}>
                             <div className="Scard" onClick={productDetail}>
