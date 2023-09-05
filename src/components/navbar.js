@@ -16,7 +16,7 @@ function MainNavbar() {
             {isComponentLoaded}
             <Navbar collapseOnSelect expand="lg" bg="dark" data-bs-theme="dark">
                 <Container>
-                    <Navbar.Brand href="#home">Trendy</Navbar.Brand>
+                    <Navbar.Brand href="/">Trendy</Navbar.Brand>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="me-auto">
