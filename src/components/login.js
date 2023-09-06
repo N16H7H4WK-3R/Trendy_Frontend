@@ -115,14 +115,15 @@ function Login() {
                             </div>
 
                             <button className={styles.customButton} size="lg" style={{ backgroundColor: '#3b5998', ...buttonStyle }}>
-                                <MDBIcon fab icon="facebook-f" className="mx-2" />
+                                <MDBIcon icon="facebook" className="mx-2" />
                                 Continue with Facebook
                             </button>
 
                             <button className={styles.customButton} size="lg" style={{ backgroundColor: '#55acee', ...buttonStyle }}>
-                                <MDBIcon fab icon="twitter" className="mx-2" />
+                                <MDBIcon icon="twitter" className="mx-2" />
                                 Continue with Twitter
                             </button>
+
                         </MDBCol>
                     </MDBRow>
                 </MDBContainer>
