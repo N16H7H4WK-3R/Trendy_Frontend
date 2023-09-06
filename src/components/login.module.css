@@ -1,0 +1,10 @@
+.customButton {
+    border-radius: 10px;
+    transition: all .1s;
+}
+
+.customButton:active {
+    color: white;
+    box-shadow: inset 4px 4px 12px black,
+        inset -4px -4px 12px black;
+}
