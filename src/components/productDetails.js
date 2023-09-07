@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './productDetails.module.css';
+import styles from './componentCss/productDetails.module.css';
 import Carousel from 'react-bootstrap/Carousel';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';

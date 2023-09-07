@@ -1,5 +1,5 @@
 import React from "react";
-import styles from './cart.module.css'
+import styles from './componentCss/cart.module.css'
 
 const Product = () => (
     <div className="product">
@@ -116,7 +116,7 @@ const Cart = () => {
                     <span>Shipping fees:</span>
                     <span>4.99$</span>
                 </div>
-                <div className="checkout--footer my-3 mx-2" style={{borderRadius: '10px'}} >
+                <div className="checkout--footer my-3 mx-2" style={{ borderRadius: '10px' }} >
                     <label className="price">
                         <sup>$</sup>57.99
                     </label>
