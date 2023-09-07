@@ -15,9 +15,9 @@ function App() {
         <MainNavbar />
         <Routes>
           <Route path="/" element={<Carousel />} />
-          <Route path="/details/*" element={<ShopDetails />} />
           <Route path="/login/*" element={<Login />} />
           <Route path="/cart/*" element={<Cart />} />
+          <Route path="/details/*" element={<ShopDetails />} />
         </Routes>
         <Footer />
       </Router>
