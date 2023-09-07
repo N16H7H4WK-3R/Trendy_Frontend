@@ -24,7 +24,7 @@ function MainNavbar() {
                             <Nav.Link href="#pricing">Pricing</Nav.Link>
                         </Nav>
                         <Nav>
-                            <a className="nav-link" href="/">
+                            <a className="nav-link" href="/cart">
                                 <i className="fa fa-shopping-cart"></i> Cart (0)
                             </a>
                             <a className="nav-link" href="/">

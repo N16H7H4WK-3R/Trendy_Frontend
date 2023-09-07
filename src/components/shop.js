@@ -46,7 +46,7 @@ const Grid = (props) => {
                     {Array.from({ length: itemsToLoad }).map((_, idx) => (
                         <Col key={idx}>
                             <div className="Scard" onClick={productDetail}>
-                                <a href="/cart">
+                                <a href="/details">
                                     <div className="Scard-img"></div>
                                 </a>
                                 <div className="Scard-info">
