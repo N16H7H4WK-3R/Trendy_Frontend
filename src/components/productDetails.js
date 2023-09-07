@@ -1,4 +1,4 @@
-import React from 'react';
+import { React, props} from 'react';
 import styles from './componentCss/productDetails.module.css';
 import Carousel from 'react-bootstrap/Carousel';
 import { ToastContainer, toast } from 'react-toastify';
@@ -40,7 +40,7 @@ const ShopDetails = () => {
                     <Carousel.Item>
                         <img
                             className={styles.images}
-                            src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.bwallpaperhd.com%2Fwp-content%2Fuploads%2F2021%2F01%2FNashPoint.jpg&f=1&nofb=1&ipt=185ed3efaf4ef310136de0581a0a39bd86679f1be2f474651920772e039ef65a&ipo=images"
+                            src={props.imageUrl}
                             alt="First slide"
                         />
                     </Carousel.Item>
