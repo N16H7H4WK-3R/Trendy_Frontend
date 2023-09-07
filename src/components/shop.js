@@ -7,8 +7,7 @@ import InfiniteScroll from 'react-infinite-scroll-component';
 
 const Grid = (props) => {
     const [isComponentLoaded, setIsComponentLoaded] = useState(false);
-    const [itemsToLoad, setItemsToLoad] = useState(18);
-    const maxItems = 90;
+    const [itemsToLoad, setItemsToLoad] = useState(18); // Initial number of items to load
 
     const notifyCart = () => {
         toast.success('Item added to cart!', {
@@ -27,15 +26,12 @@ const Grid = (props) => {
     };
 
     const loadMoreItems = () => {
+        // Calculate the number of items to load based on the current loaded items and total items in the JSON data
+        const totalItems = props.productData.length;
         const newItemsToLoad = itemsToLoad + 6;
-        const actualItemsToLoad = Math.min(newItemsToLoad, maxItems);
+        const actualItemsToLoad = Math.min(newItemsToLoad, totalItems);
         setItemsToLoad(actualItemsToLoad);
     };
-
-    const imageUrl = props.imageUrl;
-    const productTitle = props.productTitle;
-    const productDescription = props.productDescription;
-    const productPrice = props.productPrice;
 
     return (
         <>
@@ -44,16 +40,16 @@ const Grid = (props) => {
             <InfiniteScroll
                 dataLength={itemsToLoad}
                 next={loadMoreItems}
-                hasMore={itemsToLoad < maxItems}
+                hasMore={itemsToLoad < props.productData.length} // Check against the total number of items
                 style={{ overflow: 'hidden' }}
             >
                 <Row xs={2} md={6} className="g-2 gy-4 my-2 fixRows" style={{ marginLeft: '20px', overflow: 'hidden' }}>
-                    {Array.from({ length: itemsToLoad }).map((_, idx) => (
-                        <Col key={idx}>
+                    {props.productData.slice(0, itemsToLoad).map((product, index) => (
+                        <Col key={index}>
                             <div className="Scard" onClick={productDetail}>
                                 <a href="/details">
                                     <div className="Scard-img" style={{
-                                        backgroundImage: `url(${imageUrl})`,
+                                        backgroundImage: `url(${product.imageUrl})`,
                                         backgroundSize: 'cover',
                                         height: '100px',
                                         width: '100%',
@@ -64,11 +60,11 @@ const Grid = (props) => {
                                 </a>
 
                                 <div className="Scard-info">
-                                    <p className="text-title">{productTitle}</p>
-                                    <p className="text-body">{productDescription}</p>
+                                    <p className="text-title">{product.productTitle}</p>
+                                    <p className="text-body">{product.productDescription}</p>
                                 </div>
                                 <div className="Scard-footer">
-                                    <span className="text-title">{productPrice}</span>
+                                    <span className="text-title">{product.productPrice}</span>
                                     <button className="Scard-button" onClick={notifyCart}>
                                         <svg className="svg-icon" viewBox="0 0 20 20">
                                             <path d="M17.72,5.011H8.026c-0.271,0-0.49,0.219-0.49,0.489c0,0.271,0.219,0.489,0.49,0.489h8.962l-1.979,4.773H6.763L4.935,5.343C4.926,5.316,4.897,5.309,4.884,5.286c-0.011-0.024,0-0.051-0.017-0.074C4.833,5.166,4.025,4.081,2.33,3.908C2.068,3.883,1.822,4.075,1.795,4.344C1.767,4.612,1.962,4.853,2.231,4.88c1.143,0.118,1.703,0.738,1.808,0.866l1.91,5.661c0.066,0.199,0.252,0.333,0.463,0.333h8.924c0.116,0,0.22-0.053,0.308-0.128c0.027-0.023,0.042-0.048,0.063-0.076c0.026-0.034,0.063-0.058,0.08-0.099l2.384-5.75c0.062-0.151,0.046-0.323-0.045-0.458C18.036,5.092,17.883,5.011,17.72,5.011z"></path>
@@ -80,8 +76,8 @@ const Grid = (props) => {
                             </div>
                         </Col>
                     ))}
-                </Row >
-            </InfiniteScroll >
+                </Row>
+            </InfiniteScroll>
         </>
     );
 }
