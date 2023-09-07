@@ -1,0 +1,10 @@
+/* Add this CSS to your stylesheet */
+.custom {
+    width: 80rem;
+}
+
+@media (max-width: 768px) {
+    .custom {
+        width: 375px;
+    }
+}
