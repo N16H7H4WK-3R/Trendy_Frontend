@@ -21,9 +21,18 @@ const Grid = (props) => {
         });
     };
 
-    const productDetail = () => {
+    const productDetail = (index) => {
         setIsComponentLoaded(true);
+        const product = props.productData[index - 1];
+        if (product) {
+            console.log(`Scard's Unique ID: ${index}`);
+            console.log(`imageUrl: ${product.imageUrl}`);
+            console.log(`productTitle: ${product.productTitle}`);
+            console.log(`productDescription: ${product.productDescription}`);
+            console.log(`productPrice: ${product.productPrice}`);
+        }
     };
+
 
     const loadMoreItems = () => {
         // Calculate the number of items to load based on the current loaded items and total items in the JSON data
@@ -46,7 +55,7 @@ const Grid = (props) => {
                 <Row xs={2} md={6} className="g-2 gy-4 my-2 fixRows" style={{ marginLeft: '20px', overflow: 'hidden' }}>
                     {props.productData.slice(0, itemsToLoad).map((product, index) => (
                         <Col key={index}>
-                            <div className="Scard" onClick={productDetail}>
+                            <div className="Scard" onClick={() => productDetail(index + 1)}>
                                 <a href="/details">
                                     <div className="Scard-img" style={{
                                         backgroundImage: `url(${product.imageUrl})`,
