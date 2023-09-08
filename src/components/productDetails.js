@@ -1,10 +1,10 @@
-import React  from 'react';
+import React from 'react';
 import styles from './componentCss/productDetails.module.css';
 import Carousel from 'react-bootstrap/Carousel';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-const ShopDetails = () => {
+const ShopDetails = (props) => {
     const notifyCart = () => toast.success('Item added to cart !', {
         position: "top-center",
         autoClose: 3000,
@@ -67,10 +67,10 @@ const ShopDetails = () => {
                     </Carousel.Item>
                 </Carousel>
                 <div className={styles.product}>
-                    <p style={{ color: 'black' }}>Women's Running Shoe</p>
-                    <h1 style={{ color: 'black' }}>Nike Epic React Flyknit</h1>
-                    <h2 style={{ color: 'black' }}>$150</h2>
-                    <p className={styles.desc}>The Nike Epic React Flyknit foam cushioning is responsive yet lightweight, durable yet soft. This creates a sensation that not only enhances the feeling of moving forward but makes running feel fun, too.</p>
+                    {/* <p style={{ color: 'black' }}>{props.one}</p> */}
+                    <h1 style={{ color: 'black' }}>{props.productTitle}</h1>
+                    <h2 style={{ color: 'black' }}>{props.productPrice}</h2>
+                    <p className={styles.desc}>{props.productDescription}</p>
                     <div className={styles.buttons}>
                         <button className={styles.add} onClick={handleAddToCartClick}>Add to Cart</button>
                         <button className={styles.like} onClick={handleAddToFavClick}><span>♥</span></button>

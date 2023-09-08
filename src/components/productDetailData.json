@@ -1,0 +1,212 @@
+[
+    {
+        "productId": "1",
+        "productPrice": "Rs. 500",
+        "productTitle": "Product 1",
+        "productDescription": " Product 1",
+        "imageUrl": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.pinimg.com%2Foriginals%2F7b%2Fd8%2Fa7%2F7bd8a7e9b8b7c85b9de4b638eac9cb7c.jpg&f=1&nofb=1&ipt=71f48650954348743183af811be24bce05d8bf1033f092242508349a47302146&ipo=images"
+    },
+    {
+        "productId": "2",
+        "productPrice": "Rs. 600",
+        "productTitle": "Product 2",
+        "productDescription": " Product 2",
+        "imageUrl": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.pinimg.com%2Foriginals%2F7b%2Fd8%2Fa7%2F7bd8a7e9b8b7c85b9de4b638eac9cb7c.jpg&f=1&nofb=1&ipt=71f48650954348743183af811be24bce05d8bf1033f092242508349a47302146&ipo=images"
+    },
+    {
+        "productId": "3",
+        "productPrice": "Rs. 700",
+        "productTitle": "Product 3",
+        "productDescription": " Product 3",
+        "imageUrl": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.pinimg.com%2Foriginals%2F7b%2Fd8%2Fa7%2F7bd8a7e9b8b7c85b9de4b638eac9cb7c.jpg&f=1&nofb=1&ipt=71f48650954348743183af811be24bce05d8bf1033f092242508349a47302146&ipo=images"
+    },
+    {
+        "productId": "4",
+        "productPrice": "Rs. 800",
+        "productTitle": "Product 4",
+        "productDescription": " Product 4",
+        "imageUrl": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.pinimg.com%2Foriginals%2F7b%2Fd8%2Fa7%2F7bd8a7e9b8b7c85b9de4b638eac9cb7c.jpg&f=1&nofb=1&ipt=71f48650954348743183af811be24bce05d8bf1033f092242508349a47302146&ipo=images"
+    },
+    {
+        "productId": "5",
+        "productPrice": "Rs. 900",
+        "productTitle": "Product 5",
+        "productDescription": " Product 5",
+        "imageUrl": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.pinimg.com%2Foriginals%2F7b%2Fd8%2Fa7%2F7bd8a7e9b8b7c85b9de4b638eac9cb7c.jpg&f=1&nofb=1&ipt=71f48650954348743183af811be24bce05d8bf1033f092242508349a47302146&ipo=images"
+    },
+    {
+        "productId": "6",
+        "productPrice": "Rs. 600",
+        "productTitle": "Product 6",
+        "productDescription": " Product 6",
+        "imageUrl": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.pinimg.com%2Foriginals%2F7b%2Fd8%2Fa7%2F7bd8a7e9b8b7c85b9de4b638eac9cb7c.jpg&f=1&nofb=1&ipt=71f48650954348743183af811be24bce05d8bf1033f092242508349a47302146&ipo=images"
+    },
+    {
+        "productId": "7",
+        "productPrice": "Rs. 700",
+        "productTitle": "Product 7",
+        "productDescription": " Product 7",
+        "imageUrl": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.pinimg.com%2Foriginals%2F7b%2Fd8%2Fa7%2F7bd8a7e9b8b7c85b9de4b638eac9cb7c.jpg&f=1&nofb=1&ipt=71f48650954348743183af811be24bce05d8bf1033f092242508349a47302146&ipo=images"
+    },
+    {
+        "productId": "8",
+        "productPrice": "Rs. 800",
+        "productTitle": "Product 8",
+        "productDescription": " Product 8",
+        "imageUrl": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.pinimg.com%2Foriginals%2F7b%2Fd8%2Fa7%2F7bd8a7e9b8b7c85b9de4b638eac9cb7c.jpg&f=1&nofb=1&ipt=71f48650954348743183af811be24bce05d8bf1033f092242508349a47302146&ipo=images"
+    },
+    {
+        "productId": "9",
+        "productPrice": "Rs. 900",
+        "productTitle": "Product 9",
+        "productDescription": " Product 9",
+        "imageUrl": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.pinimg.com%2Foriginals%2F7b%2Fd8%2Fa7%2F7bd8a7e9b8b7c85b9de4b638eac9cb7c.jpg&f=1&nofb=1&ipt=71f48650954348743183af811be24bce05d8bf1033f092242508349a47302146&ipo=images"
+    },
+    {
+        "productId": "10",
+        "productPrice": "Rs. 600",
+        "productTitle": "Product 10",
+        "productDescription": " Product 10",
+        "imageUrl": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.pinimg.com%2Foriginals%2F7b%2Fd8%2Fa7%2F7bd8a7e9b8b7c85b9de4b638eac9cb7c.jpg&f=1&nofb=1&ipt=71f48650954348743183af811be24bce05d8bf1033f092242508349a47302146&ipo=images"
+    },
+    {
+        "productId": "11",
+        "productPrice": "Rs. 700",
+        "productTitle": "Product 11",
+        "productDescription": " Product 11",
+        "imageUrl": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.pinimg.com%2Foriginals%2F7b%2Fd8%2Fa7%2F7bd8a7e9b8b7c85b9de4b638eac9cb7c.jpg&f=1&nofb=1&ipt=71f48650954348743183af811be24bce05d8bf1033f092242508349a47302146&ipo=images"
+    },
+    {
+        "productId": "12",
+        "productPrice": "Rs. 800",
+        "productTitle": "Product 12",
+        "productDescription": " Product 12",
+        "imageUrl": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.pinimg.com%2Foriginals%2F7b%2Fd8%2Fa7%2F7bd8a7e9b8b7c85b9de4b638eac9cb7c.jpg&f=1&nofb=1&ipt=71f48650954348743183af811be24bce05d8bf1033f092242508349a47302146&ipo=images"
+    },
+    {
+        "productId": "13",
+        "productPrice": "Rs. 900",
+        "productTitle": "Product 13",
+        "productDescription": " Product 13",
+        "imageUrl": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.pinimg.com%2Foriginals%2F7b%2Fd8%2Fa7%2F7bd8a7e9b8b7c85b9de4b638eac9cb7c.jpg&f=1&nofb=1&ipt=71f48650954348743183af811be24bce05d8bf1033f092242508349a47302146&ipo=images"
+    },
+    {
+        "productId": "14",
+        "productPrice": "Rs. 600",
+        "productTitle": "Product 14",
+        "productDescription": " Product 14",
+        "imageUrl": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.pinimg.com%2Foriginals%2F7b%2Fd8%2Fa7%2F7bd8a7e9b8b7c85b9de4b638eac9cb7c.jpg&f=1&nofb=1&ipt=71f48650954348743183af811be24bce05d8bf1033f092242508349a47302146&ipo=images"
+    },
+    {
+        "productId": "15",
+        "productPrice": "Rs. 700",
+        "productTitle": "Product 15",
+        "productDescription": " Product 15",
+        "imageUrl": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.pinimg.com%2Foriginals%2F7b%2Fd8%2Fa7%2F7bd8a7e9b8b7c85b9de4b638eac9cb7c.jpg&f=1&nofb=1&ipt=71f48650954348743183af811be24bce05d8bf1033f092242508349a47302146&ipo=images"
+    },
+    {
+        "productId": "16",
+        "productPrice": "Rs. 800",
+        "productTitle": "Product 16",
+        "productDescription": " Product 16",
+        "imageUrl": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.pinimg.com%2Foriginals%2F7b%2Fd8%2Fa7%2F7bd8a7e9b8b7c85b9de4b638eac9cb7c.jpg&f=1&nofb=1&ipt=71f48650954348743183af811be24bce05d8bf1033f092242508349a47302146&ipo=images"
+    },
+    {
+        "productId": "17",
+        "productPrice": "Rs. 900",
+        "productTitle": "Product 17",
+        "productDescription": " Product 17",
+        "imageUrl": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.pinimg.com%2Foriginals%2F7b%2Fd8%2Fa7%2F7bd8a7e9b8b7c85b9de4b638eac9cb7c.jpg&f=1&nofb=1&ipt=71f48650954348743183af811be24bce05d8bf1033f092242508349a47302146&ipo=images"
+    },
+    {
+        "productId": "18",
+        "productPrice": "Rs. 600",
+        "productTitle": "Product 18",
+        "productDescription": " Product 18",
+        "imageUrl": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.pinimg.com%2Foriginals%2F7b%2Fd8%2Fa7%2F7bd8a7e9b8b7c85b9de4b638eac9cb7c.jpg&f=1&nofb=1&ipt=71f48650954348743183af811be24bce05d8bf1033f092242508349a47302146&ipo=images"
+    },
+    {
+        "productId": "19",
+        "productPrice": "Rs. 600",
+        "productTitle": "Product 19",
+        "productDescription": " Product 19",
+        "imageUrl": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.pinimg.com%2Foriginals%2F7b%2Fd8%2Fa7%2F7bd8a7e9b8b7c85b9de4b638eac9cb7c.jpg&f=1&nofb=1&ipt=71f48650954348743183af811be24bce05d8bf1033f092242508349a47302146&ipo=images"
+    },
+    {
+        "productId": "20",
+        "productPrice": "Rs. 600",
+        "productTitle": "Product 20",
+        "productDescription": " Product 20",
+        "imageUrl": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.pinimg.com%2Foriginals%2F7b%2Fd8%2Fa7%2F7bd8a7e9b8b7c85b9de4b638eac9cb7c.jpg&f=1&nofb=1&ipt=71f48650954348743183af811be24bce05d8bf1033f092242508349a47302146&ipo=images"
+    },
+    {
+        "productId": "21",
+        "productPrice": "Rs. 700",
+        "productTitle": "Product 21",
+        "productDescription": " Product 21",
+        "imageUrl": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.pinimg.com%2Foriginals%2F7b%2Fd8%2Fa7%2F7bd8a7e9b8b7c85b9de4b638eac9cb7c.jpg&f=1&nofb=1&ipt=71f48650954348743183af811be24bce05d8bf1033f092242508349a47302146&ipo=images"
+    },
+    {
+        "productId": "22",
+        "productPrice": "Rs. 800",
+        "productTitle": "Product 22",
+        "productDescription": " Product 22",
+        "imageUrl": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.pinimg.com%2Foriginals%2F7b%2Fd8%2Fa7%2F7bd8a7e9b8b7c85b9de4b638eac9cb7c.jpg&f=1&nofb=1&ipt=71f48650954348743183af811be24bce05d8bf1033f092242508349a47302146&ipo=images"
+    },
+    {
+        "productId": "23",
+        "productPrice": "Rs. 900",
+        "productTitle": "Product 23",
+        "productDescription": " Product 23",
+        "imageUrl": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.pinimg.com%2Foriginals%2F7b%2Fd8%2Fa7%2F7bd8a7e9b8b7c85b9de4b638eac9cb7c.jpg&f=1&nofb=1&ipt=71f48650954348743183af811be24bce05d8bf1033f092242508349a47302146&ipo=images"
+    },
+    {
+        "productId": "24",
+        "productPrice": "Rs. 600",
+        "productTitle": "Product 24",
+        "productDescription": " Product 24",
+        "imageUrl": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.pinimg.com%2Foriginals%2F7b%2Fd8%2Fa7%2F7bd8a7e9b8b7c85b9de4b638eac9cb7c.jpg&f=1&nofb=1&ipt=71f48650954348743183af811be24bce05d8bf1033f092242508349a47302146&ipo=images"
+    },
+    {
+        "productId": "25",
+        "productPrice": "Rs. 700",
+        "productTitle": "Product 25",
+        "productDescription": " Product 25",
+        "imageUrl": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.pinimg.com%2Foriginals%2F7b%2Fd8%2Fa7%2F7bd8a7e9b8b7c85b9de4b638eac9cb7c.jpg&f=1&nofb=1&ipt=71f48650954348743183af811be24bce05d8bf1033f092242508349a47302146&ipo=images"
+    },
+    {
+        "productId": "26",
+        "productPrice": "Rs. 800",
+        "productTitle": "Product 26",
+        "productDescription": " Product 26",
+        "imageUrl": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.pinimg.com%2Foriginals%2F7b%2Fd8%2Fa7%2F7bd8a7e9b8b7c85b9de4b638eac9cb7c.jpg&f=1&nofb=1&ipt=71f48650954348743183af811be24bce05d8bf1033f092242508349a47302146&ipo=images"
+    },
+    {
+        "productId": "27",
+        "productPrice": "Rs. 900",
+        "productTitle": "Product 27",
+        "productDescription": " Product 27",
+        "imageUrl": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.pinimg.com%2Foriginals%2F7b%2Fd8%2Fa7%2F7bd8a7e9b8b7c85b9de4b638eac9cb7c.jpg&f=1&nofb=1&ipt=71f48650954348743183af811be24bce05d8bf1033f092242508349a47302146&ipo=images"
+    },
+    {
+        "productId": "28",
+        "productPrice": "Rs. 600",
+        "productTitle": "Product 28",
+        "productDescription": " Product 28",
+        "imageUrl": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.pinimg.com%2Foriginals%2F7b%2Fd8%2Fa7%2F7bd8a7e9b8b7c85b9de4b638eac9cb7c.jpg&f=1&nofb=1&ipt=71f48650954348743183af811be24bce05d8bf1033f092242508349a47302146&ipo=images"
+    },
+    {
+        "productId": "29",
+        "productPrice": "Rs. 600",
+        "productTitle": "Product 29",
+        "productDescription": " Product 29",
+        "imageUrl": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.pinimg.com%2Foriginals%2F7b%2Fd8%2Fa7%2F7bd8a7e9b8b7c85b9de4b638eac9cb7c.jpg&f=1&nofb=1&ipt=71f48650954348743183af811be24bce05d8bf1033f092242508349a47302146&ipo=images"
+    },
+    {
+        "productId": "30",
+        "productPrice": "Rs. 600",
+        "productTitle": "Product 30",
+        "productDescription": " Product 30",
+        "imageUrl": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.pinimg.com%2Foriginals%2F7b%2Fd8%2Fa7%2F7bd8a7e9b8b7c85b9de4b638eac9cb7c.jpg&f=1&nofb=1&ipt=71f48650954348743183af811be24bce05d8bf1033f092242508349a47302146&ipo=images"
+    }
+]

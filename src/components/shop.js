@@ -4,10 +4,12 @@ import Row from 'react-bootstrap/Row';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import InfiniteScroll from 'react-infinite-scroll-component';
+import { useNavigate } from 'react-router-dom';
 
 const Grid = (props) => {
     const [isComponentLoaded, setIsComponentLoaded] = useState(false);
-    const [itemsToLoad, setItemsToLoad] = useState(18); // Initial number of items to load
+    const [itemsToLoad, setItemsToLoad] = useState(12); // Initial number of items to load
+    const navigate = useNavigate();
 
     const notifyCart = () => {
         toast.success('Item added to cart!', {
@@ -23,15 +25,9 @@ const Grid = (props) => {
 
     const productDetail = (index) => {
         setIsComponentLoaded(true);
-        const product = props.productData[index - 1];
-        if (product) {
-            console.log(`Scard's Unique ID: ${index}`);
-            console.log(`imageUrl: ${product.imageUrl}`);
-            console.log(`productTitle: ${product.productTitle}`);
-            console.log(`productDescription: ${product.productDescription}`);
-            console.log(`productPrice: ${product.productPrice}`);
-        }
+        navigate(`/Id${index}`);
     };
+
 
 
     const loadMoreItems = () => {
@@ -56,17 +52,17 @@ const Grid = (props) => {
                     {props.productData.slice(0, itemsToLoad).map((product, index) => (
                         <Col key={index}>
                             <div className="Scard" onClick={() => productDetail(index + 1)}>
-                                <a href="/details">
-                                    <div className="Scard-img" style={{
-                                        backgroundImage: `url(${product.imageUrl})`,
-                                        backgroundSize: 'cover',
-                                        height: '100px',
-                                        width: '100%',
-                                        borderRadius: '0.5rem',
-                                        transition: '0.3s ease',
-                                    }}>
-                                    </div>
-                                </a>
+                                {/* <a href="/details"> */}
+                                <div className="Scard-img" style={{
+                                    backgroundImage: `url(${product.imageUrl})`,
+                                    backgroundSize: 'cover',
+                                    height: '100px',
+                                    width: '100%',
+                                    borderRadius: '0.5rem',
+                                    transition: '0.3s ease',
+                                }}>
+                                </div>
+                                {/* </a> */}
 
                                 <div className="Scard-info">
                                     <p className="text-title">{product.productTitle}</p>
