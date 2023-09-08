@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import styles from './componentCss/login.module.css';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -22,6 +23,7 @@ function Login() {
     const [password, setPassword] = useState('');
     const [isValidEmail, setIsValidEmail] = useState(true);
     const [isValidPassword, setIsValidPassword] = useState(true);
+    const navigate = useNavigate();
 
     const showToast = (message, type) => {
         toast[type](message, {
@@ -66,6 +68,8 @@ function Login() {
         }
 
         showToast('Sign In Successful!', 'success');
+        console.log("Email:", email, "\n Password:", password);
+        navigate('/');
     };
 
     return (
