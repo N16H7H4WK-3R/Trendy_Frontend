@@ -3,19 +3,9 @@
   "name": "Create Trendy",
   "icons": [
     {
-      "src": "https://img.icons8.com/clouds/100/shopping-cart-loaded.png",
+      "src": "icon.png",
       "sizes": "64x64 32x32 24x24 16x16",
       "type": "image/x-icon"
-    },
-    {
-      "src": "https://img.icons8.com/clouds/100/shopping-cart-loaded.png",
-      "type": "image/png",
-      "sizes": "192x192"
-    },
-    {
-      "src": "https://img.icons8.com/clouds/100/shopping-cart-loaded.png",
-      "type": "image/png",
-      "sizes": "512x512"
     }
   ],
   "start_url": ".",

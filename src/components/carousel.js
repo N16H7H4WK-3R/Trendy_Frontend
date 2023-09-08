@@ -1,7 +1,7 @@
 import React from 'react';
 import Carousel from 'react-bootstrap/Carousel';
 import Grid from './shop';
-import productData from './productData.json';
+import productData from './productDetailData.json';
 
 function IndividualIntervalsExample() {
     return (
