@@ -75,7 +75,7 @@ function Login() {
     return (
         <>
             <ToastContainer />
-            <div className="login-container" style={{ maxWidth: '100' }}>
+            <div className="login-container" style={{ maxWidth: '100', marginTop: '80px'}}>
                 <MDBContainer fluid className="p-3 my-5">
                     <MDBRow>
                         <MDBCol col='10' md='6'>

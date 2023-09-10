@@ -86,7 +86,7 @@ const Product = () => (
 
 const Cart = () => {
     return (
-        <div className="master-container">
+        <div className="master-container" style={{marginTop: '80px'}}>
             <div className={`${styles.custom} card cart`}>
                 <label className="title my-3">Your cart</label>
                 <div className="products">

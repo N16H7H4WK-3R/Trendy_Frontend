@@ -8,7 +8,6 @@
     --dark: #4E4E4E;
 }
 
-
 html,
 body {
     min-height: 100%;
@@ -20,7 +19,9 @@ body {
 }
 
 .container {
-    margin: 30px;
+    margin-top : 80px;
+    margin-left: 15px;
+    margin-right: 15px;
     max-width: 100%;
     display: flex;
     flex-direction: column;
@@ -31,15 +32,22 @@ body {
     overflow: hidden;
 }
 
-.carousel img {
+.carousel {
     width: 100%;
-    max-width: 100%;
-    height: auto;
+    overflow: hidden;
 }
 
-.images img {
-    max-width: 100%;
-    height: auto;
+.carousel img {
+    width: 100%;
+    height: 600px;
+    object-fit: cover;
+    /* Ensure the image covers the entire carousel */
+}
+
+@media (max-width: 768px) {
+    .carousel img {
+        height: auto;
+    }
 }
 
 .slideshow_buttons {
@@ -47,6 +55,7 @@ body {
     justify-content: center;
     margin-top: 10px;
 }
+
 
 .one,
 .two,

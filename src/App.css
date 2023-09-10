@@ -10,7 +10,8 @@ body {
   user-select: none;
 }
 
-.carousel-control-next-icon, .carousel-control-prev-icon {
+.carousel-control-next-icon,
+.carousel-control-prev-icon {
   display: none;
 }
 
@@ -19,8 +20,10 @@ body {
 }
 
 .w-100 {
+  margin-top: 50px;
   height: 70vh !important;
   width: 100% !important;
+  object-fit: cover;
 }
 
 @media (max-width: 768px) {
