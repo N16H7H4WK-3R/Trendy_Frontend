@@ -52,7 +52,6 @@ const Grid = (props) => {
                     {props.productData.slice(0, itemsToLoad).map((product, index) => (
                         <Col key={index}>
                             <div className="Scard" onClick={() => productDetail(index + 1)}>
-                                {/* <a href="/details"> */}
                                 <div className="Scard-img" style={{
                                     backgroundImage: `url(${product.imageUrl})`,
                                     backgroundSize: 'cover',
@@ -62,7 +61,6 @@ const Grid = (props) => {
                                     transition: '0.3s ease',
                                 }}>
                                 </div>
-                                {/* </a> */}
 
                                 <div className="Scard-info">
                                     <p className="text-title">{product.productTitle}</p>
