@@ -7,4 +7,40 @@
     .custom {
         width: 375px;
     }
+
+    .cont {
+        margin-top: 0rem !important;
+        margin-bottom: 1rem !important;
+    }
+}
+
+.cont {
+    margin-top: 1rem !important;
+    margin-bottom: 1rem !important;
+}
+
+.quantity {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.quantity label {
+    background-color: #f0f0f0;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 0 10px;
+}
+
+.quantity_button {
+    background-color: #f0f0f0;
+    border: none;
+    cursor: pointer;
+    padding: 0 10px;
+    font-size: 18px;
+    margin: 0;
+}
+
+.quantity_button:hover {
+    background-color: #ccc;
 }

@@ -361,3 +361,9 @@ svg {
 }
 
 /* -------------------------------------------------- */
+
+.cart .products .new {
+  display: grid;
+  grid-template-columns: 90px 20fr 80px 1fr;
+  gap: 0px;
+}

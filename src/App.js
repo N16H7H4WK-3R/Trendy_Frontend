@@ -8,6 +8,7 @@ import ShopDetails from './components/productDetails';
 import Login from './components/login';
 import Cart from './components/cart';
 import productData from './components/productDetailData.json'
+import Wishlist from './components/wishlist';
 
 function App() {
   function productRoutes() {
@@ -35,6 +36,7 @@ function App() {
           <Route path="/" element={<Carousel />} />
           <Route path="/login/*" element={<Login />} />
           <Route path="/cart/*" element={<Cart />} />
+          <Route path="/wishlist/*" element={<Wishlist />} />
           {productRoutes()}
         </Routes>
         <Footer />
