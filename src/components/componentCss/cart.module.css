@@ -44,3 +44,12 @@
 .quantity_button:hover {
     background-color: #ccc;
 }
+
+.favorite {
+    font-size: 35px;
+    color: red;
+}
+
+.favorite :hover {
+    color: black;
+}
