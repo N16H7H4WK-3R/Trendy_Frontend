@@ -25,7 +25,7 @@ const Wishlist = () => {
         <div className="master-container" style={{ marginTop: '80px', minHeight: '85vh' }}>
 
             <div className={`${styles.custom} card cart`}>
-                <label className="title my-3">Checkout</label>
+                <label className="title my-3">Your Wishlist</label>
                 <div className="products">
                     <Product />
                     <Product />

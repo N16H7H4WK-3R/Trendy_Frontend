@@ -35,7 +35,7 @@ const Product = (props) => {
                 <label>{quantity}</label>
                 <button className={styles.quantity_button} onClick={incrementQuantity}>+</button>
             </div>
-            <label className="price small">{props.price * quantity}</label>
+            <label className="price small">$ {props.price * quantity}</label>
         </div>
     );
 };
@@ -53,8 +53,8 @@ const Cart = () => {
             <div className={`${styles.custom} card cart`}>
                 <label className="title my-3">Your cart</label>
                 <div className="products">
-                    <Product price={10} Title="Product 1" Description="Description 1" updateCartTotal={updateCartTotal} />
-                    <Product price={15} Title="Product 2" Description="Description 2" updateCartTotal={updateCartTotal} />
+                    <Product price={600} Title="Product 1" Description="Description 1" updateCartTotal={updateCartTotal} />
+                    <Product price={750} Title="Product 2" Description="Description 2" updateCartTotal={updateCartTotal} />
                 </div>
             </div>
 
@@ -74,11 +74,11 @@ const Cart = () => {
                 <label className="title my-3">Checkout</label>
                 <div className="details">
                     <span>Your cart subtotal:</span>
-                    <span>{cartTotal.toFixed(2)}</span>
+                    <span>$ {cartTotal.toFixed(2)}</span>
                     <span>Discount through applied coupons:</span>
-                    <span>3.99$</span>
+                    <span>0.00$</span>
                     <span>Shipping fees:</span>
-                    <span>4.99$</span>
+                    <span>0.00$</span>
                 </div>
                 <div className="checkout--footer my-3 mx-2" style={{ borderRadius: '10px' }} >
                     <label className="price">
