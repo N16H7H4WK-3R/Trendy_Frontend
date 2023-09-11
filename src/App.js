@@ -9,6 +9,7 @@ import Login from './components/login';
 import Cart from './components/cart';
 import productData from './components/productDetailData.json'
 import Wishlist from './components/wishlist';
+import EditProfile from './components/editProfile';
 
 function App() {
   function productRoutes() {
@@ -37,6 +38,7 @@ function App() {
           <Route path="/login/*" element={<Login />} />
           <Route path="/cart/*" element={<Cart />} />
           <Route path="/wishlist/*" element={<Wishlist />} />
+          <Route path="/editProfile/*" element={<EditProfile />} />
           {productRoutes()}
         </Routes>
         <Footer />

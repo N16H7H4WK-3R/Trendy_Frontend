@@ -367,3 +367,10 @@ svg {
   grid-template-columns: 90px 20fr 80px 1fr;
   gap: 0px;
 }
+
+/* --------------------------------------------------------- */
+
+.profileCustom {
+  margin-top: 6rem !important;
+  margin-bottom: 3rem !important;
+}

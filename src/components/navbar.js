@@ -31,7 +31,7 @@ function MainNavbar() {
                                 <i className="fa fa-heart"></i> Wishlist (0)
                             </a>
                             <NavDropdown title={<><i className="fa fa-user"></i> Username</>} id="collapsible-nav-dropdown">
-                                <li><a className="dropdown-item" href="/"><i className="fa fa-user"></i> Profile</a></li>
+                                <li><a className="dropdown-item" href="/editProfile"><i className="fa fa-user"></i> Profile</a></li>
                                 <li><a className="dropdown-item" href="/"><i className="fa fa-list"></i> My Orders</a></li>
                                 <li><a className="dropdown-item" onClick={Login} href="/login"><i className="fa fa-sign-out"></i> Login</a></li>
                             </NavDropdown>
