@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 function EditProfile() {
     const [profileImage, setProfileImage] = useState(null);
@@ -6,6 +7,7 @@ function EditProfile() {
     const [lastName, setLastName] = useState('');
     const [email, setEmail] = useState('');
     const [country, setCountry] = useState('');
+    const navigate = useNavigate();
 
     // Function to handle image upload
     const handleImageUpload = (event) => {
@@ -15,6 +17,10 @@ function EditProfile() {
             setProfileImage(imageUrl);
         }
     };
+
+    const Home = () => {
+        navigate('/');
+    }
 
     const handleFirstNameChange = (event) => {
         setFirstName(event.target.value);
@@ -40,6 +46,7 @@ function EditProfile() {
             country,
         };
         console.log(userData);
+        navigate('/', { state: { firstName } });
 
         // fetch('/api/saveProfile', {
         //     method: 'POST',
@@ -93,7 +100,7 @@ function EditProfile() {
                             <div className="d-flex justify-content-between align-items-center mb-3">
                                 <div className="d-flex flex-row align-items-center back">
                                     <i className="fa fa-long-arrow-left mr-1 mb-2 text-black mx-2"></i>
-                                    <h6 className="text-black">Back to home</h6>
+                                    <h6 className="text-black"  onClick={Home} >Back to home</h6>
                                 </div>
                             </div>
                             <div className="row mt-5">

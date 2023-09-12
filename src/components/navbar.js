@@ -3,9 +3,12 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
+import { useLocation } from 'react-router-dom';
 
 function MainNavbar() {
     const [isComponentLoaded, setIsComponentLoaded] = useState(false);
+    const location = useLocation();
+    const firstName = location.state?.firstName || ' Login';
 
     const Login = () => {
         setIsComponentLoaded(true);
@@ -30,8 +33,8 @@ function MainNavbar() {
                             <a className="nav-link" href="/wishlist">
                                 <i className="fa fa-heart"></i> Wishlist (0)
                             </a>
-                            <NavDropdown title={<><i className="fa fa-user"></i> Username</>} id="collapsible-nav-dropdown">
-                                <li><a className="dropdown-item" href="/editProfile"><i className="fa fa-user"></i> Profile</a></li>
+                            <NavDropdown title={<><i className="fa fa-user"> </i> {firstName}</>} id="collapsible-nav-dropdown" style={{textTransform: 'initial'}}>
+                                <li><a className="dropdown-item" href="/editProfile"><i className="fa fa-user"></i> Edit Profile</a></li>
                                 <li><a className="dropdown-item" href="/"><i className="fa fa-list"></i> My Orders</a></li>
                                 <li><a className="dropdown-item" onClick={Login} href="/login"><i className="fa fa-sign-out"></i> Login</a></li>
                             </NavDropdown>
