@@ -71,6 +71,9 @@ function EditProfile() {
                                     src={profileImage || "https://rb.gy/5cf02"}
                                     width="120"
                                     height="120"
+                                    style={{
+                                        objectFit: 'cover'
+                                    }}
                                 />
                                 <input
                                     type="file"
@@ -153,7 +156,7 @@ function EditProfile() {
                                 <button
                                     className="btn btn-primary profile-button"
                                     type="button"
-                                    onClick={handleSaveProfile} // Call the save function on button click
+                                    onClick={handleSaveProfile}
                                 >
                                     Save Profile
                                 </button>
