@@ -53,3 +53,10 @@
 .favorite :hover {
     color: black;
 }
+
+.details {
+    margin-top: 1.5rem;
+    font-size: 10px;
+    font-weight: bold;
+    text-transform: initial;
+}
