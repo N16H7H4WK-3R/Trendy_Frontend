@@ -7,34 +7,37 @@ function IndividualIntervalsExample() {
     return (
         <>
             <Carousel>
-                <Carousel.Item interval={500}>
-                    <img
-                        className="d-block w-100"
-                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTedS3MFZaLtF-R3l9Eol7qQLtN5t9CvkfywQ&usqp=CAU"
-                        alt="First slide"
-                    />
+                <Carousel.Item interval={3000}>
+                    <picture>
+                        <source srcSet="https://dummyimage.com/2000x500/007aeb/4196e5" media="(min-width: 1400px)" />
+                        <source srcSet="https://dummyimage.com/1400x500/#007aeb/4196e5" media="(min-width: 769px)" />
+                        <source srcSet="https://dummyimage.com/800x500/007aeb/4196e5" media="(min-width: 577px)" />
+                        <img src="https://dummyimage.com/600x500/007aeb/4196e5" alt="responsive_image" className="d-block img-fluid" />
+                    </picture>
                     <Carousel.Caption>
-                        <h3>First slide label</h3>
+                        <h3>First slide</h3>
                     </Carousel.Caption>
                 </Carousel.Item>
-                <Carousel.Item interval={500}>
-                    <img
-                        className="d-block w-100"
-                        src="https://rb.gy/iw56g"
-                        alt="First slide"
-                    />
+                <Carousel.Item interval={3000}>
+                    <picture>
+                        <source srcSet="https://dummyimage.com/2000x500/007aeb/4196e5" media="(min-width: 1400px)" />
+                        <source srcSet="https://dummyimage.com/1400x500/#007aeb/4196e5" media="(min-width: 769px)" />
+                        <source srcSet="https://dummyimage.com/800x500/007aeb/4196e5" media="(min-width: 577px)" />
+                        <img src="https://dummyimage.com/600x500/007aeb/4196e5" alt="responsive_image" className="d-block img-fluid" />
+                    </picture>
                     <Carousel.Caption>
-                        <h3>Second slide label</h3>
+                        <h3>Second slide</h3>
                     </Carousel.Caption>
                 </Carousel.Item>
-                <Carousel.Item interval={500}>
-                    <img
-                        className="d-block w-100"
-                        src="https://rb.gy/qu6ps"
-                        alt="First slide"
-                    />
+                <Carousel.Item interval={3000}>
+                    <picture>
+                        <source srcSet="https://dummyimage.com/2000x500/007aeb/4196e5" media="(min-width: 1400px)" />
+                        <source srcSet="https://dummyimage.com/1400x500/#007aeb/4196e5" media="(min-width: 769px)" />
+                        <source srcSet="https://dummyimage.com/800x500/007aeb/4196e5" media="(min-width: 577px)" />
+                        <img src="https://dummyimage.com/600x500/007aeb/4196e5" alt="responsive_image" className="d-block img-fluid" />
+                    </picture>
                     <Carousel.Caption>
-                        <h3>Third slide label</h3>
+                        <h3>Third slide</h3>
                     </Carousel.Caption>
                 </Carousel.Item>
             </Carousel>

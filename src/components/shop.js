@@ -11,8 +11,8 @@ const Grid = (props) => {
     const [itemsToLoad, setItemsToLoad] = useState(12); // Initial number of items to load
     const navigate = useNavigate();
 
-    const notifyCart = () => {
-        toast.success('Item added to cart!', {
+    const showToast = (message, type) => {
+        toast[type](message, {
             position: 'top-center',
             autoClose: 3000,
             hideProgressBar: true,
@@ -21,6 +21,14 @@ const Grid = (props) => {
             draggable: true,
             theme: 'dark',
         });
+    };
+
+    const notifyCart = () => {
+        showToast('Item added to cart.', 'success');
+    };
+
+    const notifyFavorite = () => {
+        showToast('Item added to Favorite.', 'success');
     };
 
     const productDetail = (index) => {
@@ -69,7 +77,7 @@ const Grid = (props) => {
                                     </div>
                                     <div className="Scard-footer">
                                         <span className="text-title">{product.productPrice}</span>
-                                        <button className="Scard-button heart" onClick={notifyCart}>
+                                        <button className="Scard-button heart" onClick={notifyFavorite}>
                                             <i className="fa fa-heart"></i>
                                         </button>
                                         <button className="Scard-button cart" onClick={notifyCart}>
