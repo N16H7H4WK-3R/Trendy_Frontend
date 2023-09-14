@@ -72,8 +72,8 @@ const Grid = (props) => {
                                     </div>
 
                                     <div className="Scard-info">
-                                        <p className="text-title">{product.productTitle}</p>
-                                        <p className="text-body">{product.productDescription}</p>
+                                        <p className="text-title text-center">{product.productTitle}</p>
+                                        <p className="text-body text-center">{product.productDescription}</p>
                                     </div>
                                     <div className="Scard-footer">
                                         <span className="text-title">{product.productPrice}</span>
