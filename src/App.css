@@ -125,6 +125,8 @@ svg {
   font-weight: 700;
   font-size: 1.1em;
   line-height: 1.5;
+  order: 1;
+  margin-right: auto;
 }
 
 .text-body {
@@ -133,11 +135,16 @@ svg {
 
 /*Button*/
 .Scard-button {
-  border: 1px solid #252525;
+  background-color: transparent;
+  border: none;
+  font-size: 18px;
+  border-radius: 10px;
   display: flex;
   padding: .3em;
-  transition: .3s ease-in-out;
+  transition: .5s ease-in-out;
   margin: 0px;
+  margin-left: 5px;
+  order: 2;
 }
 
 /*Hover*/
@@ -147,8 +154,13 @@ svg {
 }
 
 .Scard-button:hover {
-  border: 1px solid #ffcaa6;
-  background-color: #ffcaa6;
+  background-color: transparent;
+  transform: translateY(-15%);
+  color: red;
+}
+
+.cart:hover {
+  color: #000;
 }
 
 /* ------------------------------------------------------------ */

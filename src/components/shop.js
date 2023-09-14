@@ -52,8 +52,8 @@ const Grid = (props) => {
                     {props.productData.slice(0, itemsToLoad).map((product, index) => (
                         <Col key={index}>
                             <div className="scard loading">
-                                <div className="Scard" onClick={() => productDetail(index + 1)}>
-                                    <div className="Scard-img" style={{
+                                <div className="Scard">
+                                    <div className="Scard-img" onClick={() => productDetail(index + 1)} style={{
                                         backgroundImage: `url(${product.imageUrl})`,
                                         backgroundSize: 'cover',
                                         height: '100px',
@@ -69,10 +69,10 @@ const Grid = (props) => {
                                     </div>
                                     <div className="Scard-footer">
                                         <span className="text-title">{product.productPrice}</span>
-                                        <button className="Scard-button" onClick={notifyCart}>
-                                            <i className="fa fa-shopping-cart"></i>
+                                        <button className="Scard-button heart" onClick={notifyCart}>
+                                            <i className="fa fa-heart"></i>
                                         </button>
-                                        <button className="Scard-button" onClick={notifyCart}>
+                                        <button className="Scard-button cart" onClick={notifyCart}>
                                             <i className="fa fa-shopping-cart"></i>
                                         </button>
                                     </div>
