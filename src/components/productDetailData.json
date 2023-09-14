@@ -4,209 +4,209 @@
         "productPrice": "Rs. 500",
         "productTitle": "Product 1",
         "productDescription": " Product 1",
-        "imageUrl": "https://source.unsplash.com/800x600/?shirt"
+        "imageUrl": "https://source.unsplash.com/1400x500/?shirt"
     },
     {
         "productId": "2",
         "productPrice": "Rs. 600",
         "productTitle": "Product 2",
         "productDescription": " Product 2",
-        "imageUrl": "https://source.unsplash.com/800x600/?tshirt"
+        "imageUrl": "https://source.unsplash.com/1400x500/?tshirt"
     },
     {
         "productId": "3",
         "productPrice": "Rs. 700",
         "productTitle": "Product 3",
         "productDescription": " Product 3",
-        "imageUrl": "https://source.unsplash.com/800x600/?dress"
+        "imageUrl": "https://source.unsplash.com/1400x500/?dress"
     },
     {
         "productId": "4",
-        "productPrice": "Rs. 800",
+        "productPrice": "Rs. 1400",
         "productTitle": "Product 4",
         "productDescription": " Product 4",
-        "imageUrl": "https://source.unsplash.com/800x600/?vest"
+        "imageUrl": "https://source.unsplash.com/1400x500/?vest"
     },
     {
         "productId": "5",
         "productPrice": "Rs. 900",
         "productTitle": "Product 5",
         "productDescription": " Product 5",
-        "imageUrl": "https://source.unsplash.com/800x600/?jeans"
+        "imageUrl": "https://source.unsplash.com/1400x500/?jeans"
     },
     {
         "productId": "6",
         "productPrice": "Rs. 600",
         "productTitle": "Product 6",
         "productDescription": " Product 6",
-        "imageUrl": "https://source.unsplash.com/800x600/?boy"
+        "imageUrl": "https://source.unsplash.com/1400x500/?boy"
     },
     {
         "productId": "7",
         "productPrice": "Rs. 700",
         "productTitle": "Product 7",
         "productDescription": " Product 7",
-        "imageUrl": "https://source.unsplash.com/800x600/?suits"
+        "imageUrl": "https://source.unsplash.com/1400x500/?suits"
     },
     {
         "productId": "8",
-        "productPrice": "Rs. 800",
+        "productPrice": "Rs. 1400",
         "productTitle": "Product 8",
         "productDescription": " Product 8",
-        "imageUrl": "https://source.unsplash.com/800x600/?girl-shirt"
+        "imageUrl": "https://source.unsplash.com/1400x500/?girl-shirt"
     },
     {
         "productId": "9",
         "productPrice": "Rs. 900",
         "productTitle": "Product 9",
         "productDescription": " Product 9",
-        "imageUrl": "https://source.unsplash.com/800x600/?men-shirt&count=1"
+        "imageUrl": "https://source.unsplash.com/1400x500/?men-shirt&count=1"
     },
     {
         "productId": "10",
         "productPrice": "Rs. 600",
         "productTitle": "Product 10",
         "productDescription": " Product 10",
-        "imageUrl": "https://source.unsplash.com/800x600/?men-shirt&count=2"
+        "imageUrl": "https://source.unsplash.com/1400x500/?men-shirt&count=2"
     },
     {
         "productId": "11",
         "productPrice": "Rs. 700",
         "productTitle": "Product 11",
         "productDescription": " Product 11",
-        "imageUrl": "https://source.unsplash.com/800x600/?men-shirt&count=3"
+        "imageUrl": "https://source.unsplash.com/1400x500/?men-shirt&count=3"
     },
     {
         "productId": "12",
-        "productPrice": "Rs. 800",
+        "productPrice": "Rs. 1400",
         "productTitle": "Product 12",
         "productDescription": " Product 12",
-        "imageUrl": "https://source.unsplash.com/800x600/?men-shirt&count=4"
+        "imageUrl": "https://source.unsplash.com/1400x500/?men-shirt&count=4"
     },
     {
         "productId": "13",
         "productPrice": "Rs. 900",
         "productTitle": "Product 13",
         "productDescription": " Product 13",
-        "imageUrl": "https://source.unsplash.com/800x600/?men-shirt&count=5"
+        "imageUrl": "https://source.unsplash.com/1400x500/?men-shirt&count=5"
     },
     {
         "productId": "14",
         "productPrice": "Rs. 600",
         "productTitle": "Product 14",
         "productDescription": " Product 14",
-        "imageUrl": "https://source.unsplash.com/800x600/?men-shirt&count=6"
+        "imageUrl": "https://source.unsplash.com/1400x500/?men-shirt&count=6"
     },
     {
         "productId": "15",
         "productPrice": "Rs. 700",
         "productTitle": "Product 15",
         "productDescription": " Product 15",
-        "imageUrl": "https://source.unsplash.com/800x600/?men-shirt&count=7"
+        "imageUrl": "https://source.unsplash.com/1400x500/?men-shirt&count=7"
     },
     {
         "productId": "16",
-        "productPrice": "Rs. 800",
+        "productPrice": "Rs. 1400",
         "productTitle": "Product 16",
         "productDescription": " Product 16",
-        "imageUrl": "https://source.unsplash.com/800x600/?men-shirt&count=8"
+        "imageUrl": "https://source.unsplash.com/1400x500/?men-shirt&count=8"
     },
     {
         "productId": "17",
         "productPrice": "Rs. 900",
         "productTitle": "Product 17",
         "productDescription": " Product 17",
-        "imageUrl": "https://source.unsplash.com/800x600/?men-shirt&count=9"
+        "imageUrl": "https://source.unsplash.com/1400x500/?men-shirt&count=9"
     },
     {
         "productId": "18",
         "productPrice": "Rs. 600",
         "productTitle": "Product 18",
         "productDescription": " Product 18",
-        "imageUrl": "https://source.unsplash.com/800x600/?men-shirt&count=10"
+        "imageUrl": "https://source.unsplash.com/1400x500/?men-shirt&count=10"
     },
     {
         "productId": "19",
         "productPrice": "Rs. 600",
         "productTitle": "Product 19",
         "productDescription": " Product 19",
-        "imageUrl": "https://source.unsplash.com/800x600/?men-shirt&count=11"
+        "imageUrl": "https://source.unsplash.com/1400x500/?men-shirt&count=11"
     },
     {
         "productId": "20",
         "productPrice": "Rs. 600",
         "productTitle": "Product 20",
         "productDescription": " Product 20",
-        "imageUrl": "https://source.unsplash.com/800x600/?men-shirt&count=12"
+        "imageUrl": "https://source.unsplash.com/1400x500/?men-shirt&count=12"
     },
     {
         "productId": "21",
         "productPrice": "Rs. 700",
         "productTitle": "Product 21",
         "productDescription": " Product 21",
-        "imageUrl": "https://source.unsplash.com/800x600/?men-shirt&count=13"
+        "imageUrl": "https://source.unsplash.com/1400x500/?men-shirt&count=13"
     },
     {
         "productId": "22",
-        "productPrice": "Rs. 800",
+        "productPrice": "Rs. 1400",
         "productTitle": "Product 22",
         "productDescription": " Product 22",
-        "imageUrl": "https://source.unsplash.com/800x600/?men-shirt&count=14"
+        "imageUrl": "https://source.unsplash.com/1400x500/?men-shirt&count=14"
     },
     {
         "productId": "23",
         "productPrice": "Rs. 900",
         "productTitle": "Product 23",
         "productDescription": " Product 23",
-        "imageUrl": "https://source.unsplash.com/800x600/?men-shirt&count=15"
+        "imageUrl": "https://source.unsplash.com/1400x500/?men-shirt&count=15"
     },
     {
         "productId": "24",
         "productPrice": "Rs. 600",
         "productTitle": "Product 24",
         "productDescription": " Product 24",
-        "imageUrl": "https://source.unsplash.com/800x600/?men-shirt&count=16"
+        "imageUrl": "https://source.unsplash.com/1400x500/?men-shirt&count=16"
     },
     {
         "productId": "25",
         "productPrice": "Rs. 700",
         "productTitle": "Product 25",
         "productDescription": " Product 25",
-        "imageUrl": "https://source.unsplash.com/800x600/?men-shirt&count=17"
+        "imageUrl": "https://source.unsplash.com/1400x500/?men-shirt&count=17"
     },
     {
         "productId": "26",
-        "productPrice": "Rs. 800",
+        "productPrice": "Rs. 1400",
         "productTitle": "Product 26",
         "productDescription": " Product 26",
-        "imageUrl": "https://source.unsplash.com/800x600/?men-shirt&count=18"
+        "imageUrl": "https://source.unsplash.com/1400x500/?men-shirt&count=18"
     },
     {
         "productId": "27",
         "productPrice": "Rs. 900",
         "productTitle": "Product 27",
         "productDescription": " Product 27",
-        "imageUrl": "https://source.unsplash.com/800x600/?men-shirt&count=19"
+        "imageUrl": "https://source.unsplash.com/1400x500/?men-shirt&count=19"
     },
     {
         "productId": "28",
         "productPrice": "Rs. 600",
         "productTitle": "Product 28",
         "productDescription": " Product 28",
-        "imageUrl": "https://source.unsplash.com/800x600/?men-shirt&count=20"
+        "imageUrl": "https://source.unsplash.com/1400x500/?men-shirt&count=20"
     },
     {
         "productId": "29",
         "productPrice": "Rs. 600",
         "productTitle": "Product 29",
         "productDescription": " Product 29",
-        "imageUrl": "https://source.unsplash.com/800x600/?men-shirt&count=21"
+        "imageUrl": "https://source.unsplash.com/1400x500/?men-shirt&count=21"
     },
     {
         "productId": "30",
         "productPrice": "Rs. 600",
         "productTitle": "Product 30",
         "productDescription": " Product 30",
-        "imageUrl": "https://source.unsplash.com/800x600/?men-shirt&count=22"
+        "imageUrl": "https://source.unsplash.com/1400x500/?men-shirt&count=22"
     }
 ]
