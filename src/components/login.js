@@ -11,6 +11,7 @@ import {
     MDBInput,
     MDBCheckbox
 } from 'mdb-react-ui-kit';
+import axios from 'axios';
 
 function Login() {
     const buttonStyle = {
@@ -19,8 +20,10 @@ function Login() {
         overflow: 'hidden',
     };
 
+    const [username, setUsername] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [isValidUsername, setIsValidUsername] = useState(true);
     const [isValidEmail, setIsValidEmail] = useState(true);
     const [isValidPassword, setIsValidPassword] = useState(true);
     const navigate = useNavigate();
@@ -42,6 +45,18 @@ function Login() {
         setIsValidEmail(emailRegex.test(value));
     };
 
+    const validateUsername = (value) => {
+        // You can add validation rules for the username here
+        // For example, ensuring it's not empty or meets certain criteria.
+        setIsValidUsername(value.trim() !== ''); // Simple check for non-empty username
+    };
+
+    const handleUsernameChange = (e) => {
+        const value = e.target.value;
+        setUsername(value);
+        validateUsername(value);
+    };
+
     const handleEmailChange = (e) => {
         const value = e.target.value;
         setEmail(value);
@@ -54,28 +69,43 @@ function Login() {
         setIsValidPassword(value.length >= 8);
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
 
-        if (!email || !password) {
-            showToast('Please fill the details.', 'error');
+        if (!username || !email || !password) {
+            showToast('Please fill in all the details.', 'error');
             return;
         }
 
-        if (!isValidEmail || !isValidPassword) {
-            showToast('Please enter a valid email and password.', 'error');
+        if (!isValidUsername || !isValidEmail || !isValidPassword) {
+            showToast('Please enter valid information in all fields.', 'error');
             return;
         }
 
-        showToast('Sign In Successful!', 'success');
-        console.log("Email:", email, "\n Password:", password);
-        navigate('/');
+        try {
+            // POST request to the login endpoint
+            const response = await axios.post('http://127.0.0.1:8000//api/login/', {
+                username: username,
+                email: email,
+                password: password
+            });
+
+            if (response.status === 200) {
+                showToast('Sign In Successful!', 'success');
+                navigate('/');
+            } else {
+                showToast('Login failed. Please check your credentials.', 'error');
+            }
+        } catch (error) {
+            console.error('Error logging in:', error);
+            showToast('An error occurred while logging in. Please try again later.', 'error');
+        }
     };
 
     return (
         <>
             <ToastContainer />
-            <div className="login-container" style={{ maxWidth: '100', marginTop: '80px'}}>
+            <div className="login-container" style={{ maxWidth: '100', marginTop: '80px' }}>
                 <MDBContainer fluid className="p-3 my-5">
                     <MDBRow>
                         <MDBCol col='10' md='6'>
@@ -83,6 +113,16 @@ function Login() {
                         </MDBCol>
                         <MDBCol col='4' md='6'>
                             <form onSubmit={handleSubmit}>
+                                <MDBInput
+                                    wrapperClass='mb-4'
+                                    label='Username'
+                                    id='usernameFormControlLg'
+                                    type='text'
+                                    size="lg"
+                                    value={username}
+                                    onChange={handleUsernameChange}
+                                    className={!isValidUsername ? 'is-invalid' : ''}
+                                />
                                 <MDBInput
                                     wrapperClass='mb-4'
                                     label='Email address'
@@ -121,11 +161,6 @@ function Login() {
                             <button className={styles.customButton} size="lg" style={{ backgroundColor: '#3b5998', ...buttonStyle }}>
                                 <MDBIcon icon="facebook" className="mx-2" />
                                 Continue with Facebook
-                            </button>
-
-                            <button className={styles.customButton} size="lg" style={{ backgroundColor: '#55acee', ...buttonStyle }}>
-                                <MDBIcon icon="twitter" className="mx-2" />
-                                Continue with Twitter
                             </button>
 
                         </MDBCol>
