@@ -11,6 +11,7 @@ import productData from './components/productDetailData.json'
 import Wishlist from './components/wishlist';
 import EditProfile from './components/editProfile';
 import OrderList from './components/orderList';
+import SignUp from './components/signUp';
 
 function App() {
   function productRoutes() {
@@ -42,6 +43,7 @@ function App() {
           <Route path="/editProfile/*" element={<EditProfile />} />
           {productRoutes()}
           <Route path="/orders/*" element={<OrderList />} />
+          <Route path="/signup/*" element={<SignUp/>} />
         </Routes>
         <Footer />
       </Router>
