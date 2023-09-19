@@ -9,7 +9,6 @@ import {
     MDBRow,
     MDBIcon,
     MDBInput,
-    MDBCheckbox
 } from 'mdb-react-ui-kit';
 import axios from 'axios';
 
