@@ -47,21 +47,21 @@ const ShopDetails = (props) => {
                     <Carousel.Item>
                         <img
                             className={styles.images}
-                            src={props.imageUrl}
+                            src={props.imageUrl1}
                             alt="Second slide"
                         />
                     </Carousel.Item>
                     <Carousel.Item>
                         <img
                             className={styles.images}
-                            src={props.imageUrl}
+                            src={props.imageUrl2}
                             alt="Third slide"
                         />
                     </Carousel.Item>
                     <Carousel.Item>
                         <img
                             className={styles.images}
-                            src={props.imageUrl}
+                            src={props.imageUrl3}
                             alt="Third slide"
                         />
                     </Carousel.Item>
