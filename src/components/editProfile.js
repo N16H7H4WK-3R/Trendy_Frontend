@@ -40,28 +40,31 @@ function EditProfile() {
 
     const handleSaveProfile = () => {
         const userData = {
-            firstName,
-            lastName,
-            email,
-            country,
+            first_name: firstName,
+            last_name: lastName,
+            email: email,
+            country: country,
         };
-        console.log(userData);
-        navigate('/', { state: { firstName } });
 
-        // fetch('/api/saveProfile', {
-        //     method: 'POST',
-        //     body: JSON.stringify(userData),
-        //     headers: {
-        //         'Content-Type': 'application/json',
-        //     },
-        // })
-        //     .then(response => response.json())
-        //     .then(data => {
-        //         console.log('Profile saved:', data);
-        //     })
-        //     .catch(error => {
-        //         console.error('Error saving profile:', error);
-        //     });
+        // Send a PUT request to update the user's profile
+        fetch('http://127.0.0.1:8000//api/edit_profile/', {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json',
+                Authorization: `Token ${localStorage.getItem('token')}`,
+            },
+            body: JSON.stringify(userData),
+        })
+            .then(response => {
+                if (response.status === 200) {
+                    console.log('Profile updated successfully');
+                } else {
+                    console.error('Failed to update profile');
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
     };
 
 
@@ -100,7 +103,7 @@ function EditProfile() {
                             <div className="d-flex justify-content-between align-items-center mb-3">
                                 <div className="d-flex flex-row align-items-center back">
                                     <i className="fa fa-long-arrow-left mr-1 mb-2 text-black mx-2"></i>
-                                    <h6 className="text-black"  onClick={Home} >Back to home</h6>
+                                    <h6 className="text-black" onClick={Home} >Back to home</h6>
                                 </div>
                             </div>
                             <div className="row mt-5">
@@ -146,7 +149,7 @@ function EditProfile() {
                                     <input
                                         type="text"
                                         className="form-control"
-                                        placeholder="Address"
+                                        placeholder="Username"
                                     />
                                 </div>
                                 <div className="col-md-6">
