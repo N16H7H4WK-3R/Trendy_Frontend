@@ -33,10 +33,11 @@ function MainNavbar() {
                             <a className="nav-link" href="/wishlist">
                                 <i className="fa fa-heart"></i> Wishlist (0)
                             </a>
-                            <NavDropdown title={<><i className="fa fa-user"> </i> {firstName}</>} id="collapsible-nav-dropdown" style={{textTransform: 'initial'}}>
+                            <NavDropdown title={<><i className="fa fa-user"> </i> {firstName}</>} id="collapsible-nav-dropdown" style={{ textTransform: 'initial' }}>
                                 <li><a className="dropdown-item" href="/editProfile"><i className="fa fa-user"></i> Edit Profile</a></li>
                                 <li><a className="dropdown-item" href="/orders"><i className="fa fa-list"></i> My Orders</a></li>
                                 <li><a className="dropdown-item" onClick={Login} href="/login"><i className="fa fa-sign-out"></i> Login</a></li>
+                                <li><a className="dropdown-item" href="/signup"><i className="fa fa-sign-out"></i> signup</a></li>
                             </NavDropdown>
                         </Nav>
                     </Navbar.Collapse>
