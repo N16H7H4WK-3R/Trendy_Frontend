@@ -4,10 +4,12 @@ import axios from 'axios';
 
 function EditProfile() {
     const [profileImage, setProfileImage] = useState(null);
+    const [Username, setUsername] = useState('');
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
     const [email, setEmail] = useState('');
     const [country, setCountry] = useState('');
+    const [phoneNumber, setPhoneNumber] = useState('');
     const navigate = useNavigate();
     const [logoutStatus, setLogoutStatus] = useState(null);
 
@@ -61,10 +63,11 @@ function EditProfile() {
             setLastName(user.last_name);
             setEmail(user.email);
             setCountry(user.country);
+            setPhoneNumber(user.phone_number)
+            setUsername(user.username)
         }
     }, []);
 
-    // Function to handle image upload
     const handleImageUpload = (event) => {
         const file = event.target.files[0];
         if (file) {
@@ -76,6 +79,10 @@ function EditProfile() {
     const Home = () => {
         navigate('/');
     }
+
+    const handleUsernameChange = (event) => {
+        setUsername(event.target.value);
+    };
 
     const handleFirstNameChange = (event) => {
         setFirstName(event.target.value);
@@ -93,15 +100,20 @@ function EditProfile() {
         setCountry(event.target.value);
     };
 
+    const handlePhoneNumberChange = (event) => {
+        setPhoneNumber(event.target.value);
+    };
+
     const handleSaveProfile = () => {
         const userData = {
             first_name: firstName,
             last_name: lastName,
             email: email,
             country: country,
+            phone_number: phoneNumber
         };
 
-        // Send a PUT request to update the user's profile
+        // Sending a PUT request to update the user's profile
         fetch('http://127.0.0.1:8000/services/login/', {
             method: 'PUT',
             headers: {
@@ -197,6 +209,8 @@ function EditProfile() {
                                         type="text"
                                         className="form-control"
                                         placeholder="Phone number"
+                                        value={phoneNumber}
+                                        onChange={handlePhoneNumberChange}
                                     />
                                 </div>
                             </div>
@@ -206,6 +220,8 @@ function EditProfile() {
                                         type="text"
                                         className="form-control"
                                         placeholder="Username"
+                                        value={Username}
+                                        onChange={handleUsernameChange}
                                     />
                                 </div>
                                 <div className="col-md-6">
