@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 function EditProfile() {
-    const [profileImage, setProfileImage] = useState(null);
+    const [profileImage, setProfileImage] = useState('');
     const [Username, setUsername] = useState('');
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
@@ -64,17 +64,14 @@ function EditProfile() {
             setLastName(user.last_name.toUpperCase());
             setEmail(user.email);
             setCountry(user.country);
-            setPhoneNumber('+91 \t' + user.phone_number)
-            setUsername(user.username)
+            setPhoneNumber('+91 \t' + user.phone_number);
+            setUsername(user.username);
+            setProfileImage('http://127.0.0.1:8000'+user.profile_image);
         }
     }, []);
 
     const handleImageUpload = (event) => {
-        const file = event.target.files[0];
-        if (file) {
-            const imageUrl = URL.createObjectURL(file);
-            setProfileImage(imageUrl);
-        }
+        setProfileImage(event.target.value);
     };
 
     const Home = () => {
@@ -111,17 +108,16 @@ function EditProfile() {
             last_name: lastName,
             email: email,
             country: country,
-            phone_number: phoneNumber
+            phone_number: phoneNumber,
+            profile_image: profileImage
         };
 
         // Sending a PUT request to update the user's profile
-        fetch('http://127.0.0.1:8000/services/login/', {
-            method: 'PUT',
+        axios.put('http://127.0.0.1:8000/services/login/', userData, {
             headers: {
                 'Content-Type': 'application/json',
                 Authorization: `Token ${localStorage.getItem('token')}`,
             },
-            body: JSON.stringify(userData),
         })
             .then(response => {
                 if (response.status === 200) {
@@ -147,7 +143,7 @@ function EditProfile() {
                                 <img
                                     className="rounded-circle profile-image"
                                     alt="profileImage"
-                                    src={profileImage || "https://rb.gy/5cf02"}
+                                    src={profileImage}
                                     width="120"
                                     height="120"
                                     style={{
