@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+// import { useNavigate } from 'react-router-dom';
 import styles from './componentCss/login.module.css';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -31,7 +31,7 @@ function SignUp() {
     const [isValidPassword, setIsValidPassword] = useState(true);
     const [isValidfirstName, setIsValidFirstName] = useState(true);
     const [isValidlastName, setIsValidLastName] = useState(true);
-    const navigate = useNavigate();
+    // const navigate = useNavigate();
 
     const showToast = (message, type) => {
         toast[type](message, {

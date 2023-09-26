@@ -69,13 +69,24 @@ function Login() {
 
         try {
             // POST request to the login endpoint
-            const response = await axios.post('http://127.0.0.1:8000//services/login/', {
+            const response = await axios.post('http://127.0.0.1:8000/services/login/', {
                 username: username,
                 password: password
             });
 
             if (response.status === 200) {
+                const { token, user } = response.data;
+
+                // Store the token in localStorage
+                localStorage.setItem('token', token);
+
+                // Set user data in localStorage
+                localStorage.setItem('user', JSON.stringify(user));
+
                 showToast('Log In Successful!', 'success');
+
+                // Redirect to the edit profile page
+                navigate('/editProfile');
             } else {
                 showToast('Login failed. Please check your credentials.', 'error');
             }

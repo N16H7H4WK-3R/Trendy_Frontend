@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 
 function EditProfile() {
     const [profileImage, setProfileImage] = useState(null);
@@ -8,6 +9,60 @@ function EditProfile() {
     const [email, setEmail] = useState('');
     const [country, setCountry] = useState('');
     const navigate = useNavigate();
+    const [logoutStatus, setLogoutStatus] = useState(null);
+
+    const handleLogout = () => {
+        axios.post('http://127.0.0.1:8000/services/logout/', {}, {
+            headers: {
+                Authorization: `Token ${localStorage.getItem('token')}`,
+            },
+        })
+            .then((response) => {
+                if (response.status === 200) {
+                    localStorage.removeItem('user');
+                    localStorage.removeItem('token');
+                    navigate('/login');
+                } else if (response.status === 401) {
+                    refreshAuthToken()
+                        .then(() => {
+                            handleLogout();
+                        })
+                        .catch((error) => {
+                            setLogoutStatus('Error logging out. Please try again.');
+                            console.error(error);
+                        });
+                } else {
+                    setLogoutStatus('Error logging out. Please try again.');
+                    console.error(response.data.error);
+                }
+            })
+            .catch((error) => {
+                setLogoutStatus('Error logging out. Please try again.');
+                console.error(error);
+            });
+    };
+
+
+    const refreshAuthToken = () => {
+        return axios.post('http://127.0.0.1:8000/services/refresh-token/', {
+        }, {
+            headers: {
+                Authorization: `Token ${localStorage.getItem('token')}`,
+            },
+        });
+    };
+
+
+
+    useEffect(() => {
+        const user = JSON.parse(localStorage.getItem('user'));
+        if (user) {
+            setFirstName(user.first_name);
+            setLastName(user.last_name);
+            setEmail(user.email);
+            setCountry(user.country);
+        }
+    }, []);
 
     // Function to handle image upload
     const handleImageUpload = (event) => {
@@ -47,7 +102,7 @@ function EditProfile() {
         };
 
         // Send a PUT request to update the user's profile
-        fetch('http://127.0.0.1:8000//api/edit_profile/', {
+        fetch('http://127.0.0.1:8000/services/login/', {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',
@@ -66,6 +121,7 @@ function EditProfile() {
                 console.error('Error:', error);
             });
     };
+
 
 
     return (
@@ -169,6 +225,14 @@ function EditProfile() {
                                     onClick={handleSaveProfile}
                                 >
                                     Save Profile
+                                </button>
+                                {logoutStatus && <p>{logoutStatus}</p>}
+                                <button
+                                    className="btn btn-primary profile-button"
+                                    type="button"
+                                    onClick={handleLogout}
+                                >
+                                    LogOut
                                 </button>
                             </div>
                         </div>
