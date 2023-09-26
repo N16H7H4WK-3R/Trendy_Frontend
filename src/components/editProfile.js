@@ -66,7 +66,7 @@ function EditProfile() {
             setCountry(user.country);
             setPhoneNumber('+91 \t' + user.phone_number);
             setUsername(user.username);
-            setProfileImage('http://127.0.0.1:8000'+user.profile_image);
+            setProfileImage('http://127.0.0.1:8000' + user.profile_image);
         }
     }, []);
 
@@ -102,34 +102,40 @@ function EditProfile() {
         setPhoneNumber(event.target.value);
     };
 
-    const handleSaveProfile = () => {
-        const userData = {
-            first_name: firstName,
-            last_name: lastName,
-            email: email,
-            country: country,
-            phone_number: phoneNumber,
-            profile_image: profileImage
-        };
+    const handleSaveProfile = async () => {
+        const formData = new FormData();
+        formData.append('first_name', firstName);
+        formData.append('last_name', lastName);
+        formData.append('email', email);
+        formData.append('country', country);
+        formData.append('phone_number', phoneNumber);
 
-        // Sending a PUT request to update the user's profile
-        axios.put('http://127.0.0.1:8000/services/login/', userData, {
-            headers: {
-                'Content-Type': 'application/json',
-                Authorization: `Token ${localStorage.getItem('token')}`,
-            },
-        })
-            .then(response => {
-                if (response.status === 200) {
-                    console.log('Profile updated successfully');
-                } else {
-                    console.error('Failed to update profile');
-                }
-            })
-            .catch(error => {
-                console.error('Error:', error);
+        // Check if a new profile image was selected
+        if (profileImage instanceof File) {
+            formData.append('profile_image', profileImage);
+        }
+
+        try {
+            // Sending a PUT request to update the user's profile
+            const response = await axios.put('http://127.0.0.1:8000/services/edit-profile/', formData, {
+                headers: {
+                    Authorization: `Token ${localStorage.getItem('token')}`,
+                    'Content-Type': 'multipart/form-data',
+                },
             });
+
+            if (response.status === 200) {
+                console.log('Profile updated successfully');
+            } else {
+                console.error('Failed to update profile');
+            }
+        } catch (error) {
+            console.error('Error updating profile:', error);
+            console.error('An error occurred while updating profile. Please try again later.');
+        }
     };
+
+
 
 
 
