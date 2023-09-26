@@ -107,7 +107,7 @@ function SignUp() {
 
         try {
             // POST request to the signup endpoint
-            const response = await axios.post('http://127.0.0.1:8000/api/signup/', {
+            const response = await axios.post('http://127.0.0.1:8000/services/register/', {
                 username: username,
                 email: email,
                 password: password,
@@ -117,7 +117,6 @@ function SignUp() {
 
             if (response.status === 201) {
                 showToast('Sign Up Successful!', 'success');
-                navigate('/');
             } else {
                 showToast('Sign Up failed. Please check your credentials.', 'error');
             }
