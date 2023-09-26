@@ -13,6 +13,7 @@ function EditProfile() {
     const navigate = useNavigate();
     const [logoutStatus, setLogoutStatus] = useState(null);
 
+
     const handleLogout = () => {
         axios.post('http://127.0.0.1:8000/services/logout/', {}, {
             headers: {
@@ -59,11 +60,11 @@ function EditProfile() {
     useEffect(() => {
         const user = JSON.parse(localStorage.getItem('user'));
         if (user) {
-            setFirstName(user.first_name);
-            setLastName(user.last_name);
+            setFirstName(user.first_name.toUpperCase());
+            setLastName(user.last_name.toUpperCase());
             setEmail(user.email);
             setCountry(user.country);
-            setPhoneNumber(user.phone_number)
+            setPhoneNumber('+91 \t' + user.phone_number)
             setUsername(user.username)
         }
     }, []);
