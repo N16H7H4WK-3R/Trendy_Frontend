@@ -89,6 +89,13 @@ code {
   justify-content: space-between;
 }
 
+@media (max-width: 800px) {
+  .Scard {
+    width: 165px;
+    height: 225px;
+  }
+}
+
 .loading .Scard {
   animation: skeleton 2.5s;
 }
