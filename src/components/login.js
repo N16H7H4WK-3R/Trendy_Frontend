@@ -21,10 +21,8 @@ function Login() {
     };
 
     const [username, setUsername] = useState('');
-    const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [isValidUsername, setIsValidUsername] = useState(true);
-    const [isValidEmail, setIsValidEmail] = useState(true);
     const [isValidPassword, setIsValidPassword] = useState(true);
     const navigate = useNavigate();
 
@@ -40,11 +38,6 @@ function Login() {
         });
     };
 
-    const validateEmail = (value) => {
-        const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
-        setIsValidEmail(emailRegex.test(value));
-    };
-
     const validateUsername = (value) => {
         setIsValidUsername(value.trim() !== ''); // Simple check for non-empty username
     };
@@ -53,12 +46,6 @@ function Login() {
         const value = e.target.value;
         setUsername(value);
         validateUsername(value);
-    };
-
-    const handleEmailChange = (e) => {
-        const value = e.target.value;
-        setEmail(value);
-        validateEmail(value);
     };
 
     const handlePasswordChange = (e) => {
@@ -70,27 +57,25 @@ function Login() {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        if (!username || !email || !password) {
+        if (!username || !password) {
             showToast('Please fill in all the details.', 'error');
             return;
         }
 
-        if (!isValidUsername || !isValidEmail || !isValidPassword) {
+        if (!isValidUsername || !isValidPassword) {
             showToast('Please enter valid information in all fields.', 'error');
             return;
         }
 
         try {
             // POST request to the login endpoint
-            const response = await axios.post('http://127.0.0.1:8000//api/login/', {
+            const response = await axios.post('http://127.0.0.1:8000//services/login/', {
                 username: username,
-                email: email,
                 password: password
             });
 
             if (response.status === 200) {
-                showToast('Sign In Successful!', 'success');
-                navigate('/');
+                showToast('Log In Successful!', 'success');
             } else {
                 showToast('Login failed. Please check your credentials.', 'error');
             }
@@ -123,16 +108,6 @@ function Login() {
                                 />
                                 <MDBInput
                                     wrapperClass='mb-4'
-                                    label='Email address'
-                                    id='emailFormControlLg'
-                                    type='email'
-                                    size="lg"
-                                    value={email}
-                                    onChange={handleEmailChange}
-                                    className={!isValidEmail ? 'is-invalid' : ''}
-                                />
-                                <MDBInput
-                                    wrapperClass='mb-4'
                                     label='Password'
                                     id='passwordFormControlLg'
                                     type='password'
@@ -148,7 +123,7 @@ function Login() {
                                 </div>
 
                                 <button className={styles.customButton} style={{ backgroundColor: 'green', ...buttonStyle }} size="lg" type="submit">
-                                    Sign in
+                                    Log in
                                 </button>
                             </form>
 
