@@ -57,9 +57,8 @@ function Login() {
             const response = await axios.post('http://127.0.0.1:8000/services/login/', formData);
 
             if (response.status === 200) {
-                const { token, user } = response.data;
+                const { token } = response.data;
                 sessionStorage.setItem('token', token);
-                sessionStorage.setItem('user', JSON.stringify(user));
                 showToast('Log In Successful!', 'success');
                 setTimeout(() => {
                     navigate('/editProfile');

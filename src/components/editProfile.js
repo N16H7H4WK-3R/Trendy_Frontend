@@ -49,7 +49,6 @@ function EditProfile() {
             );
 
             if (response.status === 200) {
-                sessionStorage.removeItem('user');
                 sessionStorage.removeItem('token');
                 showToast('Successfuly logged out!', 'success');
                 setTimeout(() => {
@@ -99,19 +98,35 @@ function EditProfile() {
     };
 
     useEffect(() => {
-        const user = JSON.parse(sessionStorage.getItem('user'));
-        if (user) {
-            setProfileData({
-                ...profileData,
-                firstName: user.first_name.toUpperCase(),
-                lastName: user.last_name.toUpperCase(),
-                email: user.email,
-                country: user.country,
-                phoneNumber: user.phone_number,
-                username: user.username,
-                profileImage: 'http://127.0.0.1:8000' + user.profile_image,
+        // Fetch data from the API
+        fetch('http://127.0.0.1:8000/services/user/', {
+            method: 'GET',
+            headers: {
+                'Authorization': `Token ${sessionStorage.getItem('token')}`,
+            },
+        })
+            .then(response => {
+                if (response.ok) {
+                    return response.json();
+                } else {
+                    throw new Error('Failed to fetch user data');
+                }
+            })
+            .then(data => {
+                setProfileData(prevProfileData => ({
+                    ...prevProfileData,
+                    firstName: data.first_name.toUpperCase(),
+                    lastName: data.last_name.toUpperCase(),
+                    email: data.email,
+                    country: data.country,
+                    phoneNumber: data.phone_number,
+                    username: data.username,
+                    profileImage: 'http://127.0.0.1:8000' + data.profile_image,
+                }));
+            })
+            .catch(error => {
+                console.error(error);
             });
-        }
     }, []);
 
     const handleFieldChange = (event, field) => {
