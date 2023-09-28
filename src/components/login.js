@@ -1,8 +1,5 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import styles from './componentCss/login.module.css';
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
 import {
     MDBContainer,
     MDBCol,
@@ -12,19 +9,18 @@ import {
     MDBCheckbox
 } from 'mdb-react-ui-kit';
 import axios from 'axios';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function Login() {
-    const buttonStyle = {
-        width: '100%',
-        height: '50px',
-        overflow: 'hidden',
-    };
-
-    const [username, setUsername] = useState('');
-    const [password, setPassword] = useState('');
-    const [isValidUsername, setIsValidUsername] = useState(true);
-    const [isValidPassword, setIsValidPassword] = useState(true);
     const navigate = useNavigate();
+
+    const [formData, setFormData] = useState({
+        username: '',
+        password: '',
+    });
+
+    const [isValidForm, setIsValidForm] = useState(true);
 
     const showToast = (message, type) => {
         toast[type](message, {
@@ -38,55 +34,36 @@ function Login() {
         });
     };
 
-    const validateUsername = (value) => {
-        setIsValidUsername(value.trim() !== ''); // Simple check for non-empty username
+    const handleInputChange = (e) => {
+        const { name, value } = e.target;
+        setFormData({ ...formData, [name]: value });
     };
 
-    const handleUsernameChange = (e) => {
-        const value = e.target.value;
-        setUsername(value);
-        validateUsername(value);
-    };
-
-    const handlePasswordChange = (e) => {
-        const value = e.target.value;
-        setPassword(value);
-        setIsValidPassword(value.length >= 8);
+    const validateForm = () => {
+        setIsValidForm(formData.username.trim() !== '' && formData.password.length >= 8);
     };
 
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        if (!username || !password) {
-            showToast('Please fill in all the details.', 'error');
-            return;
-        }
+        validateForm();
 
-        if (!isValidUsername || !isValidPassword) {
+        if (!isValidForm) {
             showToast('Please enter valid information in all fields.', 'error');
             return;
         }
 
         try {
-            // POST request to the login endpoint
-            const response = await axios.post('http://127.0.0.1:8000/services/login/', {
-                username: username,
-                password: password
-            });
+            const response = await axios.post('http://127.0.0.1:8000/services/login/', formData);
 
             if (response.status === 200) {
                 const { token, user } = response.data;
-
-                // Store the token in localStorage
-                localStorage.setItem('token', token);
-
-                // Set user data in localStorage
-                localStorage.setItem('user', JSON.stringify(user));
-
+                sessionStorage.setItem('token', token);
+                sessionStorage.setItem('user', JSON.stringify(user));
                 showToast('Log In Successful!', 'success');
-
-                // Redirect to the edit profile page
-                navigate('/editProfile');
+                setTimeout(() => {
+                    navigate('/editProfile');
+                }, 3000);
             } else {
                 showToast('Login failed. Please check your credentials.', 'error');
             }
@@ -94,6 +71,13 @@ function Login() {
             console.error('Error logging in:', error);
             showToast('An error occurred while logging in. Please try again later.', 'error');
         }
+    };
+
+
+    const buttonStyle = {
+        width: '100%',
+        height: '50px',
+        overflow: 'hidden',
     };
 
     return (
@@ -113,9 +97,10 @@ function Login() {
                                     id='usernameFormControlLg'
                                     type='text'
                                     size="lg"
-                                    value={username}
-                                    onChange={handleUsernameChange}
-                                    className={!isValidUsername ? 'is-invalid' : ''}
+                                    name="username"
+                                    value={formData.username}
+                                    onChange={handleInputChange}
+                                    className={!isValidForm ? 'is-invalid' : ''}
                                 />
                                 <MDBInput
                                     wrapperClass='mb-4'
@@ -123,9 +108,10 @@ function Login() {
                                     id='passwordFormControlLg'
                                     type='password'
                                     size="lg"
-                                    value={password}
-                                    onChange={handlePasswordChange}
-                                    className={!isValidPassword ? 'is-invalid' : ''}
+                                    name="password"
+                                    value={formData.password}
+                                    onChange={handleInputChange}
+                                    className={!isValidForm ? 'is-invalid' : ''}
                                 />
 
                                 <div className="d-flex justify-content-between mx-4 mb-4">
@@ -133,7 +119,7 @@ function Login() {
                                     <a href="!#">Forgot password?</a>
                                 </div>
 
-                                <button className={styles.customButton} style={{ backgroundColor: 'green', ...buttonStyle }} size="lg" type="submit">
+                                <button className="custom-button" style={{ backgroundColor: 'green', ...buttonStyle }} size="lg" type="submit">
                                     Log in
                                 </button>
                             </form>
@@ -142,11 +128,10 @@ function Login() {
                                 <p className="text-center fw-bold mx-3 mb-0">OR</p>
                             </div>
 
-                            <button className={styles.customButton} size="lg" style={{ backgroundColor: '#3b5998', ...buttonStyle }}>
+                            <button className="custom-button" size="lg" style={{ backgroundColor: '#3b5998', ...buttonStyle }}>
                                 <MDBIcon icon="facebook" className="mx-2" />
                                 Continue with Facebook
                             </button>
-
                         </MDBCol>
                     </MDBRow>
                 </MDBContainer>
