@@ -1,9 +1,10 @@
-import './App.css';
 import React, { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import './App.css';
+
 import Carousel from './components/carousel';
 import Footer from './components/footer';
 import MainNavbar from './components/navbar';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import ShopDetails from './components/productDetails';
 import Login from './components/login';
 import Cart from './components/cart';
@@ -12,29 +13,27 @@ import EditProfile from './components/editProfile';
 import OrderList from './components/orderList';
 import SignUp from './components/signUp';
 
-function App() {
+const App = () => {
   const [productData, setProductData] = useState([]);
 
   useEffect(() => {
-    fetch('http://127.0.0.1:8000/services/data/', {
-      method: 'GET',
-    })
-      .then(response => {
-        if (response.ok) {
-          return response.json();
-        } else {
+    const fetchData = async () => {
+      try {
+        const response = await fetch('http://127.0.0.1:8000/services/data/');
+        if (!response.ok) {
           throw new Error('Failed to fetch product data');
         }
-      })
-      .then(data => {
+        const data = await response.json();
         setProductData(data);
-      })
-      .catch(error => {
+      } catch (error) {
         console.error(error);
-      });
+      }
+    };
+
+    fetchData();
   }, []);
 
-  function productRoutes() {
+  const productRoutes = () => {
     return productData.map((product) => (
       <Route
         key={product.productId}
@@ -49,7 +48,7 @@ function App() {
         }
       />
     ));
-  }
+  };
 
   return (
     <>
@@ -69,6 +68,6 @@ function App() {
       </Router>
     </>
   );
-}
+};
 
 export default App;
