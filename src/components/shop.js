@@ -4,16 +4,13 @@ import Row from 'react-bootstrap/Row';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import InfiniteScroll from 'react-infinite-scroll-component';
-import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const Grid = () => {
-    const [isComponentLoaded, setIsComponentLoaded] = useState(false);
-    const [itemsToLoad, setItemsToLoad] = useState(12); // Initial number of items to load
+    const [itemsToLoad, setItemsToLoad] = useState(12);
     const [productData, setProductData] = useState([]);
-    const navigate = useNavigate();
 
     useEffect(() => {
-        // Fetch product data when the component mounts
         fetch('http://127.0.0.1:8000/services/data/', {
             method: 'GET',
         })
@@ -52,10 +49,7 @@ const Grid = () => {
         showToast('Item added to Favorite.', 'success');
     };
 
-    const productDetail = (index) => {
-        setIsComponentLoaded(true);
-        navigate(`/Id${index}`);
-    };
+
 
     const loadMoreItems = () => {
         const totalItems = productData.length;
@@ -66,12 +60,12 @@ const Grid = () => {
 
     return (
         <>
-            {isComponentLoaded}
+
             <ToastContainer />
             <InfiniteScroll
                 dataLength={itemsToLoad}
                 next={loadMoreItems}
-                hasMore={itemsToLoad < productData.length} // Check against the total number of items
+                hasMore={itemsToLoad < productData.length}
                 style={{ overflow: 'hidden' }}
             >
                 <Row xs={2} md={6} className="g-2 gy-4 my-2 fixRows" style={{ marginLeft: '20px', overflow: 'hidden' }}>
@@ -79,16 +73,17 @@ const Grid = () => {
                         <Col key={index}>
                             <div className="scard loading">
                                 <div className="Scard">
-                                    <div className="Scard-img" onClick={() => productDetail(index + 1)} style={{
-                                        backgroundImage: `url(${product.imageUrl})`,
-                                        backgroundSize: 'cover',
-                                        height: '100px',
-                                        width: '100%',
-                                        borderRadius: '0.5rem',
-                                        transition: '0.3s ease',
-                                    }}>
-                                    </div>
-
+                                    <Link to={`/Id/${index + 1}`}>
+                                        <div className="Scard-img" style={{
+                                            backgroundImage: `url(${product.imageUrl})`,
+                                            backgroundSize: 'cover',
+                                            height: '100px',
+                                            width: '100%',
+                                            borderRadius: '0.5rem',
+                                            transition: '0.3s ease',
+                                        }}>
+                                        </div>
+                                    </Link>
                                     <div className="Scard-info">
                                         <p className="text-title text-center">{product.productTitle}</p>
                                         <p className="text-body text-center">{product.productDescription}</p>
