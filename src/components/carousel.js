@@ -1,7 +1,6 @@
 import React from 'react';
 import Carousel from 'react-bootstrap/Carousel';
 import Grid from './shop';
-import productData from './productDetailData.json';
 
 function IndividualIntervalsExample() {
     return (
@@ -41,7 +40,7 @@ function IndividualIntervalsExample() {
                     </Carousel.Caption>
                 </Carousel.Item>
             </Carousel>
-            <Grid productData={productData} />
+            <Grid />
         </>
     );
 }
