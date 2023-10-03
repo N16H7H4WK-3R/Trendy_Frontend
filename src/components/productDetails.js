@@ -5,10 +5,12 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 const ShopDetails = () => {
     const { productId } = useParams();
     const [productData, setProductData] = useState(null);
+    const navigate = useNavigate();
 
     const notifyCart = () => {
         toast.success('Item added to cart !', {
@@ -34,9 +36,43 @@ const ShopDetails = () => {
         });
     };
 
-    const handleAddToCartClick = () => {
-        notifyCart();
+    const handleAddToCartClick = async (productData) => {
+        try {
+            const token = sessionStorage.getItem('token');
+
+            if (!token) {
+                navigate('/login');
+                return;
+            }
+
+            const formData = new FormData();
+            formData.append('item_id', 25);
+            formData.append('quantity', 1);
+
+            const response = await axios.post(
+                'http://127.0.0.1:8000/services/cart/',
+                formData,
+                {
+                    headers: {
+                        Authorization: `Token ${token}`,
+                    },
+                }
+            );
+
+            if (response.status === 201) {
+                notifyCart();
+            } else {
+                console.error('Error adding item to cart:', response);
+            }
+        } catch (error) {
+            console.error('Error adding item to cart:', error);
+            if (error.response) {
+                console.error('Response Data:', error.response.data);
+                console.error('Response Status:', error.response.status);
+            }
+        }
     };
+
 
     const handleAddToFavClick = () => {
         notifyFav();
