@@ -38,9 +38,9 @@ const ShopDetails = () => {
             }
 
             const formData = new FormData();
-            formData.append('item_id', productData.productId);
-            formData.append('item_id', productData.productPrice);
-            formData.append('item_id', productData.imageUrl);
+            formData.append('product_id', productData.productId);
+            formData.append('product_price', productData.productPrice);
+            formData.append('product_image_url', productData.imageUrl);
             formData.append('quantity', 1);
 
             const response = await axiosInstance.post('cart/', formData, {
