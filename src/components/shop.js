@@ -89,7 +89,7 @@ const Grid = () => {
                                         <p className="text-body text-center">{product.productDescription}</p>
                                     </div>
                                     <div className="Scard-footer">
-                                        <span className="text-title">{product.productPrice}</span>
+                                        <span className="text-title">Rs. {product.productPrice}</span>
                                         <button className="Scard-button heart" onClick={notifyFavorite}>
                                             <i className="fa fa-heart"></i>
                                         </button>

@@ -92,7 +92,7 @@ const ShopDetails = () => {
                     </Carousel>
                     <div className={styles.product}>
                         <h1 style={{ color: 'black' }}>{productData.productTitle}</h1>
-                        <h2 style={{ color: 'black' }}>{productData.productPrice}</h2>
+                        <h2 style={{ color: 'black', textTransform: 'capitalize' }}>Rs. {productData.productPrice}</h2>
                         <p className={styles.desc}>{productData.productDescription}</p>
                         <div className={styles.buttons}>
                             <button className={styles.add} onClick={handleAddToCartClick}>Add to Cart</button>

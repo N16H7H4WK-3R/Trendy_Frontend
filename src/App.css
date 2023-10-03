@@ -138,6 +138,7 @@ svg {
   line-height: 1.5;
   order: 1;
   margin-right: auto;
+  text-transform: capitalize;
 }
 
 .text-body {
