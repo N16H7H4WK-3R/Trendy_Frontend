@@ -438,7 +438,6 @@ svg {
   height: var(--height-of-loader);
   border-radius: 30px;
   background-color: transparent !important;
-  /* Transparent background for the loader itself */
   position: relative;
 }
 

@@ -17,16 +17,14 @@ function App() {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    // Simulate an API call or any async operation here to fetch data.
-    // Once the data is loaded, set isLoading to false to hide the preloader.
     setTimeout(() => {
       setIsLoading(false);
-    }, 9000); // Change 2000 to your desired loading time.
+    }, 2000);
   }, []);
 
   return (
     <>
-      {isLoading ? ( // Show the preloader when isLoading is true
+      {isLoading ? (
         <Loader />
       ) : (
         <Router>
