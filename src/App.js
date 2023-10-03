@@ -1,5 +1,5 @@
 import './App.css';
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Carousel from './components/carousel';
 import Footer from './components/footer';
 import MainNavbar from './components/navbar';
@@ -11,24 +11,39 @@ import Wishlist from './components/wishlist';
 import EditProfile from './components/editProfile';
 import OrderList from './components/orderList';
 import SignUp from './components/signUp';
+import Loader from './components/preloader';
 
 function App() {
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    // Simulate an API call or any async operation here to fetch data.
+    // Once the data is loaded, set isLoading to false to hide the preloader.
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 9000); // Change 2000 to your desired loading time.
+  }, []);
+
   return (
     <>
-      <Router>
-        <MainNavbar />
-        <Routes>
-          <Route path="/" element={<Carousel />} />
-          <Route path="/login/*" element={<Login />} />
-          <Route path="/cart/*" element={<Cart />} />
-          <Route path="/wishlist/*" element={<Wishlist />} />
-          <Route path="/editProfile/*" element={<EditProfile />} />
-          <Route path="/Id/:productId/*" element={<ShopDetails />} />
-          <Route path="/orders/*" element={<OrderList />} />
-          <Route path="/signup/*" element={<SignUp />} />
-        </Routes>
-        <Footer />
-      </Router>
+      {isLoading ? ( // Show the preloader when isLoading is true
+        <Loader />
+      ) : (
+        <Router>
+          <MainNavbar />
+          <Routes>
+            <Route path="/" element={<Carousel />} />
+            <Route path="/login/*" element={<Login />} />
+            <Route path="/cart/*" element={<Cart />} />
+            <Route path="/wishlist/*" element={<Wishlist />} />
+            <Route path="/editProfile/*" element={<EditProfile />} />
+            <Route path="/Id/:productId/*" element={<ShopDetails />} />
+            <Route path="/orders/*" element={<OrderList />} />
+            <Route path="/signup/*" element={<SignUp />} />
+          </Routes>
+          <Footer />
+        </Router>
+      )}
     </>
   );
 }
