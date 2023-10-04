@@ -2,7 +2,12 @@ import React, { createContext, useContext, useState, useEffect } from 'react';
 
 const MyContext = createContext();
 
-export const MyProvider = ({ children }) => {
+////////////////API URL/////////////////////
+const API_URL = 'http://143.198.97.194';
+////////////////////////////////////////////
+
+
+export const Data = ({ children }) => {
     const [myVariable, setMyVariable] = useState(0);
     const token = sessionStorage.getItem('token');
 
@@ -13,7 +18,7 @@ export const MyProvider = ({ children }) => {
 
         const fetchData = async () => {
             try {
-                const response = await fetch('http://127.0.0.1:8000/services/cart-data/', {
+                const response = await fetch(`${API_URL}/services/cart-data/`, {
                     method: 'GET',
                     headers: {
                         'Authorization': `Token ${token}`,
@@ -42,6 +47,6 @@ export const MyProvider = ({ children }) => {
     );
 };
 
-export const useMyContext = () => {
+export const useDataContext = () => {
     return useContext(MyContext);
 };

@@ -12,7 +12,7 @@ import EditProfile from './components/editProfile';
 import OrderList from './components/orderList';
 import SignUp from './components/signUp';
 import Loader from './components/preloader';
-import { MyProvider } from './components/MyContext';
+import { Data } from './components/Contexts/MyContext';
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -29,20 +29,20 @@ function App() {
         <Loader />
       ) : (
         <Router>
-          <MyProvider>
+          <Data>
             <MainNavbar />
-          </MyProvider>
-          <Routes>
-            <Route path="/" element={<Carousel />} />
-            <Route path="/login/*" element={<Login />} />
-            <Route path="/cart/*" element={<Cart />} />
-            <Route path="/wishlist/*" element={<Wishlist />} />
-            <Route path="/editProfile/*" element={<EditProfile />} />
-            <Route path="/Id/:productId/*" element={<ShopDetails />} />
-            <Route path="/orders/*" element={<OrderList />} />
-            <Route path="/signup/*" element={<SignUp />} />
-          </Routes>
-          <Footer />
+            <Routes>
+              <Route path="/" element={<Carousel />} />
+              <Route path="/login/*" element={<Login />} />
+              <Route path="/cart/*" element={<Cart />} />
+              <Route path="/wishlist/*" element={<Wishlist />} />
+              <Route path="/editProfile/*" element={<EditProfile />} />
+              <Route path="/Id/:productId/*" element={<ShopDetails />} />
+              <Route path="/orders/*" element={<OrderList />} />
+              <Route path="/signup/*" element={<SignUp />} />
+            </Routes>
+            <Footer />
+          </Data>
         </Router>
       )}
     </>

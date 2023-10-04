@@ -4,13 +4,13 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import { useLocation } from 'react-router-dom';
-import { useMyContext } from './MyContext';
+import { useDataContext } from './Contexts/MyContext';
 
 function MainNavbar() {
     const [isComponentLoaded, setIsComponentLoaded] = useState(false);
     const location = useLocation();
     const firstName = location.state?.firstName || ' Login';
-    const { myVariable } = useMyContext();
+    const { myVariable } = useDataContext();
 
     const Login = () => {
         setIsComponentLoaded(true);
