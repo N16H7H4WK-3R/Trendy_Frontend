@@ -4,11 +4,13 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import { useLocation } from 'react-router-dom';
+import { useMyContext } from './MyContext';
 
 function MainNavbar() {
     const [isComponentLoaded, setIsComponentLoaded] = useState(false);
     const location = useLocation();
     const firstName = location.state?.firstName || ' Login';
+    const { myVariable } = useMyContext();
 
     const Login = () => {
         setIsComponentLoaded(true);
@@ -28,7 +30,7 @@ function MainNavbar() {
                         </Nav>
                         <Nav>
                             <a className="nav-link" href="/cart">
-                                <i className="fa fa-shopping-cart"></i> Cart (0)
+                                <i className="fa fa-shopping-cart"></i> Cart ({myVariable})
                             </a>
                             <a className="nav-link" href="/wishlist">
                                 <i className="fa fa-heart"></i> Wishlist (0)

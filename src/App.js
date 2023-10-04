@@ -12,6 +12,7 @@ import EditProfile from './components/editProfile';
 import OrderList from './components/orderList';
 import SignUp from './components/signUp';
 import Loader from './components/preloader';
+import { MyProvider } from './components/MyContext';
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -28,7 +29,9 @@ function App() {
         <Loader />
       ) : (
         <Router>
-          <MainNavbar />
+          <MyProvider>
+            <MainNavbar />
+          </MyProvider>
           <Routes>
             <Route path="/" element={<Carousel />} />
             <Route path="/login/*" element={<Login />} />
