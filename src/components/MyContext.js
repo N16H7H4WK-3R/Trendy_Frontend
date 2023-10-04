@@ -3,30 +3,37 @@ import React, { createContext, useContext, useState, useEffect } from 'react';
 const MyContext = createContext();
 
 export const MyProvider = ({ children }) => {
-    const [myVariable, setMyVariable] = useState(0); // Set an initial value
+    const [myVariable, setMyVariable] = useState(0);
+    const token = sessionStorage.getItem('token');
 
     useEffect(() => {
-        // Fetch cart data (use HTTPS)
-        fetch('http://127.0.0.1:8000/services/cart-data/', {
-            method: 'GET',
-            headers: {
-                'Authorization': `Token ${sessionStorage.getItem('token')}`,
-            },
-        })
-            .then(async (response) => {
+        if (!token) {
+            return;
+        }
+
+        const fetchData = async () => {
+            try {
+                const response = await fetch('http://127.0.0.1:8000/services/cart-data/', {
+                    method: 'GET',
+                    headers: {
+                        'Authorization': `Token ${token}`,
+                    },
+                });
+
                 if (!response.ok) {
-                    // Handle HTTP error status
                     throw new Error(`HTTP error! Status: ${response.status}`);
                 }
 
                 const data = await response.json();
                 setMyVariable(data.length);
-                console.log(setMyVariable); // You may want to log data.length instead
-            })
-            .catch(error => {
-                console.error('Error fetching data:', error.message);
-            });
-    }, []); // Empty dependency array means this effect runs once on component mount
+            } catch (error) {
+                console.error('Error:', error.message);
+                return;
+            }
+        };
+
+        fetchData();
+    }, [token]);
 
     return (
         <MyContext.Provider value={{ myVariable, setMyVariable }}>

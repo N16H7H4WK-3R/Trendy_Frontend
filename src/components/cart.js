@@ -43,29 +43,37 @@ function Product({ product, updateCart }) {
 function Cart() {
     const [cart, setCart] = useState([]);
     const [cartSubtotal, setCartSubtotal] = useState(0);
+    const token = sessionStorage.getItem('token');
 
     useEffect(() => {
-        // Fetch cart data (use HTTPS)
-        fetch('http://127.0.0.1:8000/services/cart-data/', {
-            method: 'GET',
-            headers: {
-                'Authorization': `Token ${sessionStorage.getItem('token')}`,
-            },
-        })
-            .then(async (response) => {
+        if (!token) {
+            return;
+        }
+
+        const fetchData = async () => {
+            try {
+                const response = await fetch('http://127.0.0.1:8000/services/cart-data/', {
+                    method: 'GET',
+                    headers: {
+                        'Authorization': `Token ${token}`,
+                    },
+                });
+
                 if (!response.ok) {
-                    // Handle HTTP error status
                     throw new Error(`HTTP error! Status: ${response.status}`);
                 }
 
                 const data = await response.json();
                 setCart(data);
                 calculateSubtotal(data);
-            })
-            .catch(error => {
-                console.error('Error fetching data:', error.message);
-            });
-    }, []);
+            } catch (error) {
+                console.error('Error Fetching Data:', error.message);
+                return;
+            }
+        };
+
+        fetchData();
+    }, [token]);
 
     const updateCart = (productId, newQuantity) => {
         // Update cart in state when a product's quantity changes
