@@ -1,11 +1,9 @@
+// MyContext.js
 import React, { createContext, useContext, useState, useEffect } from 'react';
 
 const MyContext = createContext();
 
-////////////////API URL/////////////////////
 const API_URL = 'http://143.198.97.194';
-////////////////////////////////////////////
-
 
 export const Data = ({ children }) => {
     const [myVariable, setMyVariable] = useState(0);
@@ -40,8 +38,10 @@ export const Data = ({ children }) => {
         fetchData();
     }, [token]);
 
+    const contextValue = { myVariable, setMyVariable, API_URL };
+
     return (
-        <MyContext.Provider value={{ myVariable, setMyVariable }}>
+        <MyContext.Provider value={contextValue}>
             {children}
         </MyContext.Provider>
     );

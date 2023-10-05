@@ -5,13 +5,15 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import InfiniteScroll from 'react-infinite-scroll-component';
 import { Link } from 'react-router-dom';
+import { useDataContext } from './Contexts/MyContext';
 
 const Grid = () => {
+    const { API_URL } = useDataContext();
     const [itemsToLoad, setItemsToLoad] = useState(12);
     const [productData, setProductData] = useState([]);
 
     useEffect(() => {
-        fetch('http://127.0.0.1:8000/services/data/', {
+        fetch(`${API_URL}/services/data/`, {
             method: 'GET',
         })
             .then(response => {
@@ -27,7 +29,7 @@ const Grid = () => {
             .catch(error => {
                 console.error(error);
             });
-    }, []);
+    }, [API_URL]);
 
     const showToast = (message, type) => {
         toast[type](message, {
@@ -57,6 +59,8 @@ const Grid = () => {
         const actualItemsToLoad = Math.min(newItemsToLoad, totalItems);
         setItemsToLoad(actualItemsToLoad);
     };
+
+    console.log(productData.imageUrl);
 
     return (
         <>
