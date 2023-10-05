@@ -9,6 +9,7 @@ import { Link } from 'react-router-dom';
 const Grid = () => {
     const [itemsToLoad, setItemsToLoad] = useState(12);
     const [productData, setProductData] = useState([]);
+    const [hasMore, setHasMore] = useState(true);
 
     useEffect(() => {
         fetch('http://127.0.0.1:8000/services/data/', {
@@ -49,23 +50,21 @@ const Grid = () => {
         showToast('Item added to Favorite.', 'success');
     };
 
-
-
     const loadMoreItems = () => {
-        const totalItems = productData.length;
-        const newItemsToLoad = itemsToLoad + 6;
-        const actualItemsToLoad = Math.min(newItemsToLoad, totalItems);
-        setItemsToLoad(actualItemsToLoad);
+        if (itemsToLoad >= productData.length) {
+            setHasMore(false);
+        } else {
+            setItemsToLoad(itemsToLoad + 6);
+        }
     };
 
     return (
         <>
-
             <ToastContainer />
             <InfiniteScroll
                 dataLength={itemsToLoad}
                 next={loadMoreItems}
-                hasMore={itemsToLoad < productData.length}
+                hasMore={hasMore}
                 style={{ overflow: 'hidden' }}
             >
                 <Row xs={2} md={6} className="g-2 gy-4 my-2 fixRows" style={{ marginLeft: '20px', overflow: 'hidden' }}>
