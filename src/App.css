@@ -431,37 +431,26 @@ svg {
   height: 100vh;
 }
 
-.loader {
-  display: block;
-  --height-of-loader: 4px;
-  --loader-color: #0071e2;
-  width: 130px;
-  height: var(--height-of-loader);
-  border-radius: 30px;
-  background-color: transparent !important;
-  position: relative;
+.ball {
+  --size: 20px;
+  --timing: 0.7s;
+  --displace: 70px;
+  border-radius: 50%;
+  width: var(--size);
+  height: var(--size);
+  background: #000;
+  margin-right: var(--displace);
+  animation: animation321 var(--timing) infinite alternate cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 
-.loader::before {
-  content: "";
-  position: absolute;
-  background: var(--loader-color);
-  top: 0;
-  left: 0;
-  width: 0%;
-  height: 100%;
-  border-radius: 30px;
-  animation: moving 1s ease-in-out infinite;
-}
-
-@keyframes moving {
-  50% {
-    width: 100%;
+@keyframes animation321 {
+  0% {
+    background: #4284f3;
+    transform: translateX(var(--displace));
   }
 
   100% {
-    width: 0;
-    right: 0;
-    left: unset;
+    background: #ea4335;
+    transform: translateX(00px);
   }
 }
